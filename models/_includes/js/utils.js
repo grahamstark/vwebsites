@@ -69,8 +69,8 @@ async function get_output_item( uid, item, datatype ){
         .then( response=>response.text())
         .then( data => {
             // console.log(data);
-            $(itemid).val( data );
-            // const container = document.getElementById(itemid);
-            // container.innerHTML = data;
+            // $(itemid).val( data );
+            const container = document.getElementById(itemid);
+            container.innerHTML = data;
         });
 }

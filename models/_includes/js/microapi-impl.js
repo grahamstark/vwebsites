@@ -10,7 +10,7 @@ async function get_output( uid ){
     get_output_item( uid, 'hbai', 'svg');
     get_output_item( uid, 'lorenz_curve', 'svg');
     get_output_item( uid, 'deciles', 'svg');
-    get_output_item( uid, 'metrs', 'svg');
+    get_output_item( uid, 'metrs2', 'svg');
     get_output_item( uid, 'metrs_hist', 'svg');
 }
 
