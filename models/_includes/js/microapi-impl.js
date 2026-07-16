@@ -16,7 +16,8 @@ async function get_output( uid ){
 
 
 async function initialise(){
-    var uid = getUID();
+    var uid = null;
+    uid = getUID();
     // initial parameters
     const url = [API,"params","get",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     console.log( "initialise; fetching " + url )

@@ -41,9 +41,11 @@ function setVal( id, val, def ){
 
 function getUID(){
     var uid = localStorage.getItem( "scotben-uid");
-    if(uid == null){
-        uid = $( "#uid" ).val();
-        if(uid !== null){
+    console.log( "got uid from local storage as " + uid + "; datatype is " + typeof(uid));
+    if((! uid )||(uid == 'undefined')){
+        uid = $( "#scotben-uid" ).val();
+        console.log( "getUID; retrieving from input field; set to " + uid );
+        if(! uid ){
             localStorage.setItem( "scotben-uid", uid );
         }
     }
@@ -60,12 +62,15 @@ function setUID( uid ){
 
 async function get_output_item( uid, item, datatype ){
     const url = [API,"output","fetch",MODEL,EDITION,datatype,item].join("/") + "?uid="+uid;
-    console.log( "get_output_item; fetching " + url )
+    console.log( "get_output_item; fetching " + url );
+    itemid = datatype == 'svg' ? '#img-' + item : '#tab-' + item; // FIXME expand this jason at least
+    console.log( "writing to " + itemid );
     await fetch(url)
         .then( response=>response.text())
         .then( data => {
             // console.log(data);
-            const container = document.getElementById(item);
-            container.innerHTML = data;
+            $(itemid).val( data );
+            // const container = document.getElementById(itemid);
+            // container.innerHTML = data;
         });
 }
