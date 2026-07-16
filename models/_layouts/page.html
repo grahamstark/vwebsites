@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+{% include model_header.html %}
+<body >
+
+<main class='row' role='main' >
+        
+        {% include main_nav.html %}
+        {% include sub_nav.html %}
+        <article role='article' class='col-xs'>
+                
+                {% if page.title %}
+                <header role='header' class='box'>
+                        <h1>{{page.title}}</h1>
+                </header>
+                {% endif %}
+                
+                <section  role='section'  class='box'>
+                        {{page.content | markdownify }}                        
+                </section>
+        </article>
+        
+</main>
+{% include model_footer.html %}
+</body>
+</html>

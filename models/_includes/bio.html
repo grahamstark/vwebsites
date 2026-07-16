@@ -1,0 +1,18 @@
+
+<section class='bio' id='{{ include.person.name | slugify }}'>
+        <h4>{{ include.person.name }}</h4> 
+        <p>
+        {{ include.person.bio  }}
+        </p>
+        <nav>
+        {% if include.person.url != null %}
+        &bull; <a href='{{include.person.url}}'>Web</a>
+        {% endif %}
+        {% if include.person.twitter != null %}
+        &bull; <a href='{{include.person.twitter}}'>Twitter</a> 
+        {% endif %}
+        {% if include.person.email  != null %}
+        &bull; <a href='mailto:{{include.person.email}}'>Email</a> 
+        {% endif %}
+        </nav>
+</section>

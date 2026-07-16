@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+{% include model_header.html %}
+
+<body class='text-primary p-2'>
+        
+{% include main_nav.html %}
+
+<header role='header' class='box'>
+    <h1>{{page.title}}</h1>
+</header>
+
+<header role='header' class='box'>
+    <h2>Inputs</h2>
+</div>
+
+{% include simple-params-inputs.html %}
+
+{% include submission-block.html %}
+
+<header role='header' class='box'>
+    <h2>Results At A Glance</h2>
+</div>
+
+<div class='row fs-5 justify-content-center text-primary pt-3 pb-3'>
+
+{% include default-output.html which='gainlose' %}
+{% include default-output.html which='costs' %}
+{% include default-output.html which='metrs' %}
+
+</div>
+
+<div class='row fs-5 justify-content-center text-primary pt-3 pb-3'>
+
+{% include default-output.html which='poverty' %}
+{% include default-output.html which='inequality' %}
+{% include default-output.html which='income' %}
+
+</div>
+
+{% include modal-popups.html which='gainlose' %}
+{% include modal-popups.html which='costs' %}
+{% include modal-popups.html which='metrs' %}
+{% include modal-popups.html which='poverty' %}
+{% include modal-popups.html which='inequality' %}
+{% include modal-popups.html which='income' %}
+
+{% include model_footer.html %}
+
+</body>
+
+<script>
+
+const UID =  -1 //4907240437919486244;
+const MODEL = "scotben";
+const EDITION = "simple-2026a";
+const SUBSYS = "SimpleParams"
+
+{% include js/utils.js %}
+{% include js/rate-table-edit.js %}
+{% include js/scotben-params-edit.js %}
+
+{% include js/microapi-impl.js %}
+
+$(document).ready(function(){
+    // load default params ..
+    console.log( "ready - initialise")
+    initialise();
+});
+
+</script>
+
+</html>

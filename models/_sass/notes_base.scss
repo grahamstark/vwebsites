@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+@import "uploader";
+
+body{
+        font-family: 'Montserrat', sans-serif;
+        color: black;
+        max-width: 1000px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.issue1{ background-color: $issue1; color: white; }
+.issue2{ background-color: $issue2; color: white; }
+.issue3{ background-color: $issue3; color: white; }
+.issue4{ background-color: $issue4; color: white; }
+.issue5{ background-color: $issue5; color: white; }
+.issue6{ background-color: $issue6; color: white; }
+.issue7{ background-color: $issue7; color: white; }
+.issue8{ background-color: $issue8; color: white; }
+
+li.issue1{ color: black; background-color: white; border-left: 5px solid $issue1; }
+li.issue2{ color: black; background-color: white; border-left: 5px solid $issue2; }
+li.issue3{ color: black; background-color: white; border-left: 5px solid $issue3; }
+li.issue4{ color: black; background-color: white; border-left: 5px solid $issue4; }
+li.issue5{ color: black; background-color: white; border-left: 5px solid $issue5; }
+li.issue6{ color: black; background-color: white; border-left: 5px solid $issue6; }
+li.issue7{ color: black; background-color: white; border-left: 5px solid $issue7; }
+li.issue8{ color: black; background-color: white; border-left: 5px solid $issue8; }
+
+li.issue{ display: block; width: 100px; }
+
+header, h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+}
+
+main{
+        /* height:90vh; */
+
+}
+
+img.issue-image{
+    max-width:50%;
+    max-height:50%;
+}
+
+
+img.issue-thumbnail{
+    max-width:80%;
+    max-height:80%;
+    display: block;
+    float: right;
+}
+
+a.notes-logo{
+
+}
+
+img.notes-logo{
+    max-width:35%;
+    max-height:35%;
+    display: block;
+    padding-top: 12pt;
+    padding-left: 0;
+    padding-right: 11pt;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a img.notes-logo:hover{
+    filter: brightness(150%);
+}
+
+
+
+article{
+        padding: 8px;
+}
+
+#main_nav, #sub_nav{
+        display:block;
+        padding-left: 3pt;
+        padding-right: 3pt;
+        padding-top: 1px;
+        li{ padding: 3px };
+        a:hover{
+            filter: brightness(150%);
+        }
+        a{
+                text-decoration: none;
+        }
+        ul{
+                list-style-type: none;
+        }
+        ul.issue li a{
+                color: white;
+        }
+}
+
+
+#sub_nav{
+        padding-top: 6pt;
+        padding-left:0;
+        color: #666;
+        font-size: 80%;
+        li{ padding-left:0;}
+}
+
+footer{
+        padding: 3pt;
+        display:block;
+        font-size: 80%;
+        border-top: 1px solid silver;
+        font-weight: normal;
+
+        address{ display: block;  }
+
+        .copyright{ font-style: italic; }
+
+        nav{ display: block; }
+}
+
+
+a .issue-thumbnail{
+        display: block;
+        float: left;
+        padding:6px;
+        margin: 6px;
+        width: 400px;
+}
+
+a .issue-thumbnail:hover{
+       filter: brightness(120%);
+}

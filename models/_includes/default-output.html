@@ -1,0 +1,90 @@
+{% if include.which == 'gainlose' %}
+
+    <div class='col hover-highlight'
+        data-bs-toggle='modal'
+        data-bs-target='#gainlose-popup'>
+
+        <h4>Gainers and Losers</h4>
+        <table class='table table-sm align-middle'>
+            <tr>
+                <th>Gaining:</th><td class='text-success' id='headlines-gainers'></td>
+            </tr>
+            <tr>
+                <th>Losing:</th><td class='text-danger' id='headlines-losers'></td>
+            </tr>
+            <tr>
+                <th>Unchanged:</th><td class='' id='headlines-nochange'></td>
+            </tr>
+        </table>
+        <p class='text-info fs-6'>These are counts of people living in households whose net income has increased, decreased, or stayed the same.</p>
+    </div>
+
+{% elsif include.which == 'costs' %}
+
+    <div class='col hover-highlight'
+        data-bs-toggle='modal'
+        data-bs-target='#costs-popup'>
+        <h4>Revenues and Costs</h4>
+        <div class='text-center' id='overall-cost-table'></div>
+        <table class='table table-sm'>
+            <tr><th>Tax Revenues:</th><td id='headlines-tax'></td></tr>
+            <tr><th>Benefit Spending:</th><td id='headlines-benefits'></td></tr>
+        </table>
+        <p class='text-info fs-6'>These </p>
+    </div>
+
+{% elsif include.which == 'metrs' %}
+
+    <div class='col hover-highlight'
+            data-bs-toggle='modal'
+            data-bs-target='#metrs-popup'>
+        <h4>Incentives to Work</h4>
+        <h5>Marginal Effective Tax Rates</h5>
+        <table class='table table-sm'>
+            <tr><th>Median :</th><td id='headlines-median-metrs'></td></tr>
+            <tr><th>Mean:</th><td id='headlines-mean-metrs'></td></tr>
+        </table>
+        <p class='text-info fs-6'>The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and
+        reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away.</p>
+    </div>
+
+{% elsif include.which == 'poverty' %}
+
+    <div class='col hover-highlight'
+                data-bs-toggle='modal'
+                data-bs-target='#poverty-popup'>
+        <h4>Poverty</h4>
+        <table class='table table-sm'>
+            <tr><th>Headline Poverty Rate :</th><td id='headlines-pov-headcount'></td></tr>
+            <tr><th>Child Poverty Rate:</th><td id='headlines-child-poverty'></td></tr>
+        </table>
+            <p class='text-info fs-6'>The headline poverty rate is the percentage of the Scottish population that live in households with income below 60% of the median. The Child Poverty rate is the percentage of children in such households.</p>
+    </div>
+
+{% elsif include.which == 'inequality' %}
+
+    <div class='col hover-highlight'
+                data-bs-toggle='modal'
+                data-bs-target='#inequality-popup'>
+        <h4>Inequality</h4>
+        <table class='table table-sm'>
+            <tr><th>Standard Measure (GINI):</th><td id='headlines-gini'></td></tr>
+            <tr><th>Alternative Measure (Palma):</th><td id='headlines-palma'></td></tr>
+        </table>
+        <p class='text-info fs-6'>Gini and Palma are two commonly used measures of how unequal the distribution of income is.  </p>
+    </div>
+
+{% elsif include.which == 'income' %}
+
+    <div class='col hover-highlight'
+                data-bs-toggle='modal'
+                data-bs-target='#incomes-popup'>
+        <h4>Incomes</h4>
+        <table class='table table-sm'>
+            <tr><th>Mean Income:</th><td id='headlines-mean-income'></td></tr>
+            <tr><th>Median Income:</th><td id='headlines-median-income'></td></tr>
+        </table>
+        <p class='text-info fs-6'>These are changes in "Equivalised Before Housing Costs" income per person - income after taxes and benefits, with incomes adjusted ("equivalised") to allow for the fact that larger families need more income to reach the same standard of living.</p>
+    </div>
+
+{% endif  %}

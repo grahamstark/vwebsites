@@ -1,0 +1,30 @@
+$issue1: rgb(112,207,227);
+$issue2: rgb(206,125,90);
+$issue3: rgb(255,224,125);
+$issue4: rgb(212,77,116);
+$issue5: rgb(195,159,137);
+$issue6: rgb(128,129,121);
+$issue7: rgb(60,60,60);
+$issue8: #072332;
+
+$issues: (
+
+'issue1' : $issue1,
+'issue2' : $issue2,
+'issue3' : $issue3,
+'issue4' : $issue4,
+'issue5' : $issue5,
+'issue6' : $issue6,
+'issue7' : $issue7,
+'issue8' : $issue8
+ );
+ 
+
+$e1_light: rgba( $issue1, 0.25 );
+$e2_light: rgba( $issue2, 0.25 );
+$e3_light: rgba( $issue3, 0.25 );
+$e4_light: rgba( $issue4, 0.25 );
+$e5_light: rgba( $issue5, 0.25 );
+$e6_light: rgba( $issue6, 0.25 );
+$e7_light: rgba( $issue7, 0.25 );
+$e8_light: rgba( $issue8, 0.25 );

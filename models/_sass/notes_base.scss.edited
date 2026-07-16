@@ -1,0 +1,41 @@
+body{
+        font-family: 'Alegreya', serif;
+        font-family: 'Montserrat', sans-serif;
+        color: black;
+}
+
+.edition1{ background: $edition1; color: white; }
+.edition2{ background: $edition2; color: white; }
+.edition3{ background: $edition3; color: white; }
+.edition4{ background: $edition4; color: white; }
+
+article{
+        display: block;
+        padding: 3pt;
+        float: right;
+        width: 69%;
+}
+
+nav.main_nav{
+        display:block;
+        float:left;
+        padding: 3pt;
+        width: 30%;
+        ul{
+                list-style-type: none;       
+                a:hover{
+                    filter: brightness(150%);    
+                }
+        }
+        
+
+}
+footer{ 
+        display:block; 
+        font-size: 80%;
+        border-top: 1px solid silver;
+        font-weight: normal;
+        address{ display: block; float: left;  }
+        .copyright{ font-style: italic; }
+        .social-media{ display: block; float: right }
+}

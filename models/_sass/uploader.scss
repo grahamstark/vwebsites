@@ -1,0 +1,49 @@
+$CREATE: #c12727;
+$LOAD: #4f27c1;
+$SAVE:  #096c7e; 
+$WRITE: #d22572; 
+$LOGIN: #764379; 
+$LOGOUT: #64341f; 
+$COMMIT: #29378a; 
+$DEPLOY: #646112; 
+$REMOVE: #580e23;
+$NO_ACTION: #0e6a44; 
+$UPLOAD: #448888;
+
+$ACTIONS: (
+        
+        'Create' : $CREATE,
+        'Load' : $LOAD,
+        'Save' : $SAVE,
+        'Write' : $WRITE,
+        'Login' : $LOGIN,
+        'Logout' : $LOGOUT,
+        'Commit' : $COMMIT,
+        'Deploy' : $DEPLOY,
+        'Remove' : $REMOVE,
+        'Upload' : $UPLOAD,
+        'No_action' : $NO_ACTION
+);
+
+label{
+        width: 400px;
+        display: inline-block;
+        font-weight: bold;
+}
+
+.actionResult{
+        background: #aaffbb;
+        font-weight: bold;        
+}
+
+
+
+@each $name, $colour in $ACTIONS{
+        input.#{$name}{ background: $colour; color: white; padding: 8pt; font-size: 12pt }
+        label.#{$name}{ color: $colour; }        
+}
+
+.error{
+        color: red;
+}
+

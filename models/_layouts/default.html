@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+{% include header.html %}
+<body >
+
+<main class='' role='main' >
+        <nav>
+                <ul>
+                        <li></li>
+                </ul>
+        </nav>
+        <article role='article'>
+                <header role='header'>
+                        <h1>{{page.title}}</h1>
+                        <p></p>
+                </header>
+                
+                
+                <section  role='section'>
+                        <header><h2></h2></header>
+                        <p>
+                        {{page.content | markdownify }}
+                        </p>
+                </section>
+        </article>
+</main>
+{% include footer.html %}
+</body>
+</html>

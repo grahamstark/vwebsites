@@ -1,0 +1,33 @@
+{% if page.category == 'About' %} 
+<nav role='sub' id='sub_nav'  class='col-xs-8 col-sm-6 col-md-1 col-lg-1'>
+ <ul id='menu2'>
+ {% assign pages = site.html_pages | where: "category",'About' | sort: 'order' %}
+ {% for p in pages %}
+       <li>
+                  {% if p.url == page.url %}
+                  {{ p.title }}
+                  {% else %}
+                  <a href="{{ p.url }}">{{ p.title }}</a>
+                  {% endif %}
+       </li>
+      {% endfor %}
+</ul>
+</nav>
+{% endif %}
+
+{% if page.category == 'Projects' %} 
+<nav role='sub' id='sub_nav'  class='col-xs-4 col-sm-2 col-md-2 col-lg-2'>
+ <ul id='menu2'>
+ {% assign pages = site.html_pages | where: "category",'Projects' | sort: 'order' %}
+ {% for p in pages %}
+       <li>
+                  {% if p.url == page.url %}
+                  {{ p.title }}
+                  {% else %}
+                  <a href="{{ p.url }}">{{ p.title }}</a>
+                  {% endif %}
+       </li>
+      {% endfor %}
+</ul>
+</nav>
+{% endif %}

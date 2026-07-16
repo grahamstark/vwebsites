@@ -1,0 +1,8 @@
+        {% if include.person.url != null %}
+        <a href='{{include.person.url}}'>{{include.person.name}}, {{include.person.role}}</a>
+        
+        {% else %}
+        
+        {{include.person.name}}, {{include.person.role}}  
+        
+        {% endif %}
