@@ -1,5 +1,5 @@
 
-async function get_output( uid ){
+function get_output( uid ){
     get_output_item( uid, 'children_gl', 'html');
     get_output_item( uid, 'hhtype_gl', 'html');
     get_output_item( uid, 'ten_gl', 'html');
@@ -15,13 +15,13 @@ async function get_output( uid ){
 }
 
 
-async function initialise(){
+function initialise(){
     var uid = null;
     uid = getUID();
     // initial parameters
     const url = [API,"params","get",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     console.log( "initialise; fetching " + url )
-    await fetch(url)
+    fetch(url)
         .then( response=>response.json())
         .then( data => {
             console.log("fetch params got data as " + data.uid);

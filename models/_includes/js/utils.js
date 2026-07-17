@@ -63,13 +63,13 @@ function setUID( uid ){
 async function get_output_item( uid, item, datatype ){
     const url = [API,"output","fetch",MODEL,EDITION,datatype,item].join("/") + "?uid="+uid;
     console.log( "get_output_item; fetching " + url );
-    itemid = datatype == 'svg' ? '#img-' + item : '#tab-' + item; // FIXME expand this jason at least
+    itemid = datatype == 'svg' ? 'img-' + item : 'tab-' + item; // FIXME expand this jason at least
     console.log( "writing to " + itemid );
     await fetch(url)
         .then( response=>response.text())
         .then( data => {
             // console.log(data);
-            // $(itemid).val( data );
+            // $("#"+itemid).val( data );
             const container = document.getElementById(itemid);
             container.innerHTML = data;
         });
