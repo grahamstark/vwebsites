@@ -68,9 +68,27 @@ async function get_output_item( uid, item, datatype ){
     await fetch(url)
         .then( response=>response.text())
         .then( data => {
-            // console.log(data);
             // $("#"+itemid).val( data );
-            const container = document.getElementById(itemid);
+            var container = document.getElementById(itemid);
             container.innerHTML = data;
+            if( datatype == 'svg'){
+                const svgp = document.getElementById("ximg-"+item);
+                for( attr of ["width","height","viewBox"]){
+                    var v = svgp.getAttribute( attr );
+                    container.setAttribute( attr, v );
+                    console.log( "setting " + attr + " to " + v );
+                }
+                console.log( "container="+container);
+                svgp.remove();
+                /*
+                console.log(data);
+                var placeholder = document.createElement('div');
+                placeholder.innerHTML = data
+                var elem = placeholder.firstChild;
+                console.log( typeof( elem ));
+                container.appendChild(elem);
+                // placeholder.remove();
+                */
+            }
         });
 }

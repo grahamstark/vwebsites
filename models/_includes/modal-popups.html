@@ -12,19 +12,14 @@ All the modal popups in one file - pick one ...
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class='modal-body'>
-            <div>
                 <div id='gain-lose-summary'></div>
                 <h4>Gains By Income Decile</h4>
         {% include svg-figure.html size="std" id="deciles" caption="The household population of Scotland grouped into tenths by income, from poorest to richest, and the average change in £s per week for each group." %}
                 <h4>Tables of Gainers and Losers</h4>
-
         {% include table-figure.html id='children_gl' caption="Counts of Gainers and Losers By Number of Children" %}
         {% include table-figure.html id='hhtype_gl' caption="Counts of Gainers and Losers By Household Size" %}
         {% include table-figure.html id='ten_gl' caption="Counts of Gainers and Losers By Tenure" %}
         {% include table-figure.html id='dec_gl' caption="Counts of Gainers and Losers By Equivalent Income Decile" %}
-
-            </div>
-
         </div> <!-- modal body -->
     </div> <!-- model content -->
 </div><!-- hidden div -->
@@ -39,7 +34,6 @@ All the modal popups in one file - pick one ...
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class='modal-body'>
-            <div>
                 <h4>Costs Summary</h4>
                 {% include table-figure.html id='costs_table' caption="Costs/Revenues in £m p.a.; counts of recipients/payers in 000s" %}
 
@@ -50,8 +44,6 @@ All the modal popups in one file - pick one ...
 
                 <h4>Detailed Costs</h4>
                 {% include table-figure.html id='detailed_costs' caption="Costs/Revenues in £m p.a.; counts of recipients/payers. All Items." %}
-
-            </div>
         </div> <!-- modal body -->
     </div> <!-- model content -->
 </div><!-- hidden div -->
@@ -73,7 +65,6 @@ All the modal popups in one file - pick one ...
             {% include svg-figure.html size="long" id="metrs2" caption="Histogram of Marginal Effective Tax Rates, pre- and post-. <a href=''>More Information</a>" %}
             <h4>Marginal Effective Tax Rates - Transitions</h4>
             {% include table-figure.html id='metrs_transitions' caption="This shows how the METRS of working-age people change as a result of your changes," %}
-
         </div> <!-- modal body -->
     </div> <!-- model content -->
 </div><!-- hidden div -->
@@ -92,7 +83,6 @@ All the modal popups in one file - pick one ...
             {% include table-figure.html id='poverty_summary' caption="" %}
                 <h4>Transitions</h4>
             {% include table-figure.html id='poverty_transitions' caption="" %}
-
         </div> <!-- modal body -->
     </div> <!-- model content -->
 </div><!-- hidden div -->
@@ -107,11 +97,9 @@ All the modal popups in one file - pick one ...
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class='modal-body'>
-
         {% include svg-figure.html size="std" id="lorenz_curve" caption="Standard Curve showing the share of income against share of population; <a href=''>More Information</a>." %}
         <h4>Inequality Measures</h4>
         {% include table-figure.html id='inequality_summary' caption="" %}
-
         </div> <!-- modal body -->
     </div> <!-- model content -->
 </div><!-- hidden div -->
@@ -127,7 +115,6 @@ All the modal popups in one file - pick one ...
         </div>
         <div class='modal-body'>
         {% include svg-figure.html size="long" id="hbai" caption="Reproduction of the standard HBAI Income Distribution graph. <a href=''>More Information</a>." %}
-
         </div> <!-- modal body -->
     </div> <!-- model content -->
 </div><!-- hidden div -->

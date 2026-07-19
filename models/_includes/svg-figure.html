@@ -20,6 +20,9 @@ Render a single SVG element in one of 4 sizes.
     {% assign viewbox = site.svg_viewBox %}
 {%endif%}
 <figure class="col">
-    <svg id='img-{{include.id}}' height="{{height}}" width='{{width}}' viewBox="{{viewbox}}"></svg>
+
+    <svg id='ximg-{{include.id}}' height="{{height}}" width='{{width}}' viewBox="{{viewbox}}"></svg>
+
+    <div id='img-{{include.id}}'></div>
     <figcaption class='text-info fs-6'>{{include.caption}}</figcaption>
 </figure>

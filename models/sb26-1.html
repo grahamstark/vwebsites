@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang='en-GB'>
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,15 +27,6 @@
 
 
 <body class='text-primary p-2'>
-        
-<nav>
-        <ul class="nav">
-                <li class="nav-item"><a class='nav-link' href='https://stb.virtual-worlds.scot/scotbudg/'>A Scottish Budget</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href='https://ubi.virtual-worlds.scot/'>Basic Income</a></li>
-                <li class="nav-item"><a class='nav-link' href='https://stb.virtual-worlds.scot/bcd/'>Budget Constraints</a></li>
-                <li class="nav-item"><a class='nav-link' href='https://stb-blog.virtual-worlds.scot/'>Blog</a></li>
-        </ul>
-</nav>
 
 
 <header role='header' class='box'>
@@ -50,120 +41,9 @@
 
     <input type='hidden' id='scotben-uid' name='scotben-uid' value='-1' />
 
-    <div class='container-fluid'>
-        <div class='row'><!-- input row -->
-            <fieldset class="col border rounded-2 m-1 p-2">
-                <legend>Income Tax</legend>
-                        <input type="hidden" id="tax-n" name="tax-n" value=""/>
-                        <table id='it-table' class="table table-sm table-striped">
-                            <caption>Rates in %, bands in &pound;s pa</caption>
-                            <thead>
-                                <tr>
-                                    <th>Rate (%)</th>
-                                    <th>Band (£pa)</th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody id='tax-rows'>
-                            </tbody>
-                        </table>
-                        <div class="col ukreserved p-2 rounded-2">
-                            <label for='taxallowance' class='form-label'>Personal Allowance £pa</label>
-                            <input id='taxallowance' type='number' name="taxallowance" min='0' max='100000' value='' step='1' size="12" class='form-control w-50'/>
-                        </div>
-            </fieldset>
-            <fieldset class='col border rounded-2 m-1 p-2 ukreserved'>
-                <legend>National Insurance</legend>
-                <input type="hidden" id="ni-n" name="ni-n" value=""/>
-                <table class="table table-sm table-striped">
-                    <caption>Rates in %, bands in &pound;s pw</caption>
-                    <thead>
-                        <tr>
-                            <th>Rate (%)</th>
-                            <th>Band (£pw)</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id='ni-rows'>
-                    </tbody>
-                </table>
-            </fieldset>
-            <fieldset class='col border  rounded-2 m-1 p-2'>
-                <legend>Scottish Benefits</legend>
-                <div class="row">
-                    <div class="col">
-                        <label for='scottish_child_payment' class='form-label'>Scottish Child Payment £pw</label>
-                        <input id='scottish_child_payment' type='number' name="scottish_child_payment" min='0' max='400' value='' step='0.01' size="10" class='form-control w-50'/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for='scp_age' class='form-label'>Scottish Child Payment: maximum age (years)</label>
-                        <input id='scp_age' type='number' name="scp_age" min='0' max='18' value='' step='1' size="4" class='form-control w-50'/>
-                    </div>
-                </div>
-            </fieldset>
-            <fieldset class='col border rounded-2 m-1 p-2 ukreserved'>
-                    <legend>UK (Reserved) Benefits</legend>
-                    <div class="row">
-                        <div class="col">
-                            <label for='uc_single' class='form-label'>Universal Credit: Single over 25 (£pm)</label>
-                            <input id='uc_single' type='number' name="uc_single" min='0' max='2000' value='' step='0.01' size="10" class='form-control w-50'/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for='uc_taper' class='form-label'>Universal Credit Taper (%)</label>
-                            <input id='uc_taper' type='number' name="uc_taper" min='1' max='100' value='' step='1' size="10" class='form-control w-50'/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <label for='child_benefit' class='form-label'>Child Benefit (1st child) £pw</label>
-                            <input id='child_benefit' type='number' name="child_benefit" min='0' max='1000' value='' step='0.01' size="10" class='form-control w-50'/>
-                        </div>
-                    </div>
-                    <div class="row">
-                            <div class="col">
-                                <label for='pension' class='form-label'>New State Pension £pw</label>
-                                <input id='pension' type='number' name="pension" min='0' max='1000' value='' step='0.01' size="10" class='form-control w-50'/>
-                            </div>
-                    </div>
-            </fieldset>
-        </div><!-- row -->
-    </div><!-- container-fluid -->
 </form>
 
-
-<fieldset class="row">
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col">
-        <ul class="nav">
-            <li class="nav-item  p-2">
-                <button  type="button" class='btn btn-warning rounded-2' value='' onclick='get_output(-1)'>Reset</button>
-            </li>
-            <li class="nav-item p-2">
-                <button  type="button" class='btn btn-info rounded-2' value='' onclick='params_set()'>Save</button>
-            </li>
-            <li class="nav-item p-2">
-                <button  type="button" class='btn btn-success rounded-2' value='' onclick='run_submit()'>Run</button>
-            </li>
-        </ul>
-    </div>
-</fieldset> <!-- submission row -->
-
-
-<header role='header' class='box'>
-    <h2>Results At A Glance</h2>
-</header>
-
 <div class='row fs-5 justify-content-center text-primary pt-3 pb-3'>
-
-
 
     <div class='col hover-highlight'
         data-bs-toggle='modal'
@@ -183,100 +63,8 @@
         </table>
         <p class='text-info fs-6'>These are counts of people living in households whose net income has increased, decreased, or stayed the same.</p>
     </div>
-
-
-
-
-
-    <div class='col hover-highlight'
-        data-bs-toggle='modal'
-        data-bs-target='#costs-popup'>
-        <h4>Revenues and Costs</h4>
-        <div class='text-center' id='overall-cost-table'></div>
-        <table class='table table-sm'>
-            <tr><th>Tax Revenues:</th><td id='headlines-tax'></td></tr>
-            <tr><th>Benefit Spending:</th><td id='headlines-benefits'></td></tr>
-        </table>
-        <p class='text-info fs-6'>These </p>
-    </div>
-
-
-
-
-
-    <div class='col hover-highlight'
-            data-bs-toggle='modal'
-            data-bs-target='#metrs-popup'>
-        <h4>Incentives to Work</h4>
-        <h5>Marginal Effective Tax Rates</h5>
-        <table class='table table-sm'>
-            <tr><th>Median :</th><td id='headlines-median-metrs'></td></tr>
-            <tr><th>Mean:</th><td id='headlines-mean-metrs'></td></tr>
-        </table>
-        <p class='text-info fs-6'>The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and
-        reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away.</p>
-    </div>
-
-
-
-
 </div>
 
-<div class='row fs-5 justify-content-center text-primary pt-3 pb-3'>
-
-
-
-    <div class='col hover-highlight'
-                data-bs-toggle='modal'
-                data-bs-target='#poverty-popup'>
-        <h4>Poverty</h4>
-        <table class='table table-sm'>
-            <tr><th>Headline Poverty Rate :</th><td id='headlines-pov-headcount'></td></tr>
-            <tr><th>Child Poverty Rate:</th><td id='headlines-child-poverty'></td></tr>
-        </table>
-            <p class='text-info fs-6'>The headline poverty rate is the percentage of the Scottish population that live in households with income below 60% of the median. The Child Poverty rate is the percentage of children in such households.</p>
-    </div>
-
-
-
-
-
-    <div class='col hover-highlight'
-                data-bs-toggle='modal'
-                data-bs-target='#inequality-popup'>
-        <h4>Inequality</h4>
-        <table class='table table-sm'>
-            <tr><th>Standard Measure (GINI):</th><td id='headlines-gini'></td></tr>
-            <tr><th>Alternative Measure (Palma):</th><td id='headlines-palma'></td></tr>
-        </table>
-        <p class='text-info fs-6'>Gini and Palma are two commonly used measures of how unequal the distribution of income is.  </p>
-    </div>
-
-
-
-
-
-    <div class='col hover-highlight'
-                data-bs-toggle='modal'
-                data-bs-target='#incomes-popup'>
-        <h4>Incomes</h4>
-        <table class='table table-sm'>
-            <tr><th>Mean Income:</th><td id='headlines-mean-income'></td></tr>
-            <tr><th>Median Income:</th><td id='headlines-median-income'></td></tr>
-        </table>
-        <p class='text-info fs-6'>These are changes in "Equivalised Before Housing Costs" income per person - income after taxes and benefits, with incomes adjusted ("equivalised") to allow for the fact that larger families need more income to reach the same standard of living.</p>
-    </div>
-
-
-
-
-</div>
-
-
-
-
-
-<!-- popups: 1) gain lose -->
 <div class='modal fade' id='gainlose-popup' tabindex='-1' role='dialog' aria-labelledby='crosstab-label' aria-hidden='true'>
     <div class='modal-content modal-dialog modal-xl'  role='document'>
         <div class='modal-header'>
@@ -284,247 +72,43 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class='modal-body'>
-            <div>
                 <div id='gain-lose-summary'></div>
                 <h4>Gains By Income Decile</h4>
-        
 
-
-<figure class="col">
+<figure >
     <svg id='img-deciles' height="625" width='1008' viewBox="0 0 2100 1297"></svg>
-    <figcaption class='text-info fs-6'>The household population of Scotland grouped into tenths by income, from poorest to richest, and the average change in £s per week for each group.</figcaption>
+    <figcaption class='text-info fs-6'>The household population of Scotland grouped into tenths by income, from poorest to richest, and the average change in £s per week for each group.
+    </figcaption>
 </figure>
 
                 <h4>Tables of Gainers and Losers</h4>
-
-        
-<figure class="col">
+<figure >
     <div id='tab-children_gl'></div>
     <figcaption class='text-info fs-6'>Counts of Gainers and Losers By Number of Children</figcaption>
 </figure>
 
-        
-<figure class="col">
+<figure >
     <div id='tab-hhtype_gl'></div>
     <figcaption class='text-info fs-6'>Counts of Gainers and Losers By Household Size</figcaption>
 </figure>
 
-        
-<figure class="col">
+
+<figure >
     <div id='tab-ten_gl'></div>
     <figcaption class='text-info fs-6'>Counts of Gainers and Losers By Tenure</figcaption>
 </figure>
 
-        
-<figure class="col">
+
+<figure >
     <div id='tab-dec_gl'></div>
     <figcaption class='text-info fs-6'>Counts of Gainers and Losers By Equivalent Income Decile</figcaption>
 </figure>
 
-
-            </div>
-
         </div> <!-- modal body -->
-    </div> <!-- model content -->
+    </div> <!-- modal content -->
 </div><!-- hidden div -->
 
 
-
-
-
-
-
-<!-- popups: 2) costs -->
-<div class='modal fade' id='costs-popup' tabindex='-1' role='dialog' aria-labelledby='crosstab-label' aria-hidden='true'>
-    <div class='modal-content modal-dialog modal-xl'  role='document'>
-        <div class='modal-header'>
-            <h3  class='modal-title' >Costs of Your Changes</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class='modal-body'>
-            <div>
-                <h4>Costs Summary</h4>
-                
-<figure class="col">
-    <div id='tab-costs_table'></div>
-    <figcaption class='text-info fs-6'>Costs/Revenues in £m p.a.; counts of recipients/payers in 000s</figcaption>
-</figure>
-
-
-                
-
-
-<figure class="col">
-    <svg id='img-taxable_graph' height="1250" width='1008' viewBox="0 0 2100 2558"></svg>
-    <figcaption class='text-info fs-6'>Taxable Incomes, in £10 bands, against Marginal Income Tax Rates.</figcaption>
-</figure>
-
-
-                <h4>SFC Behavioural Corrections</h4>
-                
-<figure class="col">
-    <div id='tab-sfc'></div>
-    <figcaption class='text-info fs-6'>Income Tax Behavioural Corrections based on <a href=''>paper by Scottish Fiscal Commission</a>.</figcaption>
-</figure>
-
-
-                <h4>Detailed Costs</h4>
-                
-<figure class="col">
-    <div id='tab-detailed_costs'></div>
-    <figcaption class='text-info fs-6'>Costs/Revenues in £m p.a.; counts of recipients/payers. All Items.</figcaption>
-</figure>
-
-
-            </div>
-        </div> <!-- modal body -->
-    </div> <!-- model content -->
-</div><!-- hidden div -->
-
-
-
-
-
-
-
-<!-- popups: 3) METRS -->
-<div class='modal fade' id='metrs-popup' tabindex='-1' role='dialog' aria-labelledby='crosstab-label' aria-hidden='true'>
-    <div class='modal-content modal-dialog modal-xl'  role='document'>
-        <div class='modal-header'>
-            <h3  class='modal-title' >Incentives To Work - Marginal Effective Tax Rates (METRS)</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class='modal-body'>
-            <p class='text-info fs-6'>
-                The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and
-                reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away.
-            </p>
-            
-
-
-<figure class="col">
-    <svg id='img-metrs2' height="1250" width='1008' viewBox="0 0 2100 2558"></svg>
-    <figcaption class='text-info fs-6'>Histogram of Marginal Effective Tax Rates, pre- and post-. <a href=''>More Information</a></figcaption>
-</figure>
-
-            <h4>Marginal Effective Tax Rates - Transitions</h4>
-            
-<figure class="col">
-    <div id='tab-metrs_transitions'></div>
-    <figcaption class='text-info fs-6'>This shows how the METRS of working-age people change as a result of your changes,</figcaption>
-</figure>
-
-
-        </div> <!-- modal body -->
-    </div> <!-- model content -->
-</div><!-- hidden div -->
-
-
-
-
-
-
-
-<!-- popups: 4) Poverty -->
-<div class='modal fade' id='poverty-popup' tabindex='-1' role='dialog' aria-labelledby='crosstab-label' aria-hidden='true'>
-    <div class='modal-content modal-dialog modal-xl'  role='document'>
-        <div class='modal-header'>
-            <h3  class='modal-title' >Poverty</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class='modal-body'>
-                <h4>Summary</h4>
-            
-<figure class="col">
-    <div id='tab-poverty_summary'></div>
-    <figcaption class='text-info fs-6'></figcaption>
-</figure>
-
-                <h4>Transitions</h4>
-            
-<figure class="col">
-    <div id='tab-poverty_transitions'></div>
-    <figcaption class='text-info fs-6'></figcaption>
-</figure>
-
-
-        </div> <!-- modal body -->
-    </div> <!-- model content -->
-</div><!-- hidden div -->
-
-
-
-
-
-
-
-<!-- popups: 5) Inequality -->
-<div class='modal fade' id='inequality-popup' tabindex='-1' role='dialog' aria-labelledby='crosstab-label' aria-hidden='true'>
-    <div class='modal-content modal-dialog modal-xl'  role='document'>
-        <div class='modal-header'>
-            <h3  class='modal-title' >Inequality</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class='modal-body'>
-
-        
-
-
-<figure class="col">
-    <svg id='img-lorenz_curve' height="625" width='1008' viewBox="0 0 2100 1297"></svg>
-    <figcaption class='text-info fs-6'>Standard Curve showing the share of income against share of population; <a href=''>More Information</a>.</figcaption>
-</figure>
-
-        <h4>Inequality Measures</h4>
-        
-<figure class="col">
-    <div id='tab-inequality_summary'></div>
-    <figcaption class='text-info fs-6'></figcaption>
-</figure>
-
-
-        </div> <!-- modal body -->
-    </div> <!-- model content -->
-</div><!-- hidden div -->
-
-
-
-
-
-
-
-<!-- popups: 6) Incomes -->
-<div class='modal fade' id='incomes-popup' tabindex='-1' role='dialog' aria-labelledby='crosstab-label' aria-hidden='true'>
-    <div class='modal-content modal-dialog modal-xl'  role='document'>
-        <div class='modal-header'>
-            <h3  class='modal-title' >Household Incomes</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class='modal-body'>
-        
-
-
-<figure class="col">
-    <svg id='img-hbai' height="1250" width='1008' viewBox="0 0 2100 2558"></svg>
-    <figcaption class='text-info fs-6'>Reproduction of the standard HBAI Income Distribution graph. <a href=''>More Information</a>.</figcaption>
-</figure>
-
-
-        </div> <!-- modal body -->
-    </div> <!-- model content -->
-</div><!-- hidden div -->
-
-
-
-
-<footer class='row'>
-    <ul>
-        <li><a href='https://github.com/grahamstark/ScottishTaxBenefitModel.jl'>ScotBen</a></li>
-        <li><a href='https://github.com/grahamstark/MicrosimAPIv1'>MicrosimAPI, V1</a></li>
-        <li><a href='https://microapi.virtual-worlds.scot/docs/'>API Spec In Swagger Format</a></li>
-        <li><a href='docs/microsimapi-v1.pdf'>Draft Documentation</a></li>
-    </ul>
-</footer>
 
 
 <script>
@@ -542,38 +126,6 @@ const SUBSYS = "SimpleParams";
 const BIG_A = 9999999999;
 
 const API = "http://microapi-local/";
-
-function makeId( n, name, type ){
-    var typename = makeTypename( type );
-    return name + "-" + typename + '-' + n;
-}
-
-function makeInput( n, name, type ){
-    var typename = makeTypename( type );
-    var min=-BIG_A;
-    var max=BIG_A;
-    var step=1;
-    if( type == 'band' ){
-        min=0.0;
-        max=BIG_A;
-    } else if( type=='rate'){
-        min=0.0;
-        max=100;
-        step=0.01;
-    }
-    var id = makeId( n, name, type );
-    return "<input id='"+id+"' name='"+id+"' type='number' min='"+min+"' max='"+max+"' step='"+step+"' value='' class=' w-75  ' />";
-}
-
-function setVal( id, val, def ){
-    $( "#"+id ).val( val );
-    console.log( "setVal for #%s val=%s def=%s", id, val, def )
-    if( val != def ){
-        $( "#"+id ).addClass( 'changed');
-    } else {
-        $( "#"+id ).removeClass( 'changed');
-    }
-}
 
 function getUID(){
     var uid = localStorage.getItem( "scotben-uid");
@@ -611,166 +163,22 @@ async function get_output_item( uid, item, datatype ){
         });
 }
 
-/**
- *  things to edit grouped arrays of rates and bands
- */
-
-function makeTypename( type ){
-    return type=='rate' ? 'r' : 'b';
+async function get_output( uid ){
+    await get_output_item( uid, 'children_gl', 'html');
+    await get_output_item( uid, 'hhtype_gl', 'html');
+    await get_output_item( uid, 'ten_gl', 'html');
+    await get_output_item( uid, 'dec_gl', 'html');
+    await get_output_item( uid, 'deciles', 'svg');
 }
 
 
-/**
- * action: like 'del-tax'
- * n : array index (from 1, not 0)
- **/
-function editTable( action, n ){
-    console.log( "action=", action, "n=", n );
-    var tt = action.split("-");
-    which = tt[1];
-    rbs = scrapetax( which );
-    rates = rbs[0];
-    bands = rbs[1];
-
-    pos = n-1
-    if(tt[0] == 'del'){
-        rbs[0].splice(pos,1);
-        rbs[1].splice(pos,1);
-    } else if(tt[0] == 'add'){
-        rbs[0].splice(pos, 0, 0.0);
-        rbs[1].splice(pos, 0, 0.0 );
-    } else {
-        console.log( "unknown action=", tt[0] );
-    }
-    console.log( "rbs=", rbs, "n=", n );
-    initialiseTable( which, rbs[0], rbs[1], rbs[0], rbs[1] );
-}
-
-function makeAddDel( n, name, isdel ){
-    var action = 'add-'+name;
-    var icon = "bi-plus-circle text-success";
-    if(isdel===true){
-        action = 'del-'+name;
-        icon = "bi-dash-circle text-danger";
-    }
-    return "<span onclick='editTable(\""+action+"\", "+n+")' ><i class=\""+icon+"\" style=\"font-size: 1rem\"></i></span>";
-}
-
-function makeRow( n, name, addDel ){
-    const id = name+"-"+n;
-    var row = "<tr id='"+id+"'><td>"+makeInput( n, name, 'rate' )+"</td><td>"+makeInput( n, name, 'band' )+"</td><td  class='align-middle'>"+makeAddDel( n, name, false )+"</td>";
-    if( addDel ){
-        row += "<td class='align-middle'>"+makeAddDel( n, name, true )+"</td>";
-    } else {
-        row += "<td></td>";
-    }
-    row += "</tr>";
-    // console.log( "made row as |"+row+"|" );
-    return row;
-}
-
-function insertRow( which, n, name, addRow ){
-    $("#"+which ).append( makeRow( n, name, addRow ));
-}
-
-function loadTax( name, rates, bands, defrates, defbands ){
-    var nr = rates.length;
-    var nb = bands.length;
-    // console.log( "nr="+nr + " nb = " + nb );
-    $( "#"+name+"-n").val( nr );
-    for( var i = 1; i <= nr; i++ ){
-        var rp = "#"+name+"-r-"+i;
-        $( rp ).val( rates[i-1]);
-        var rb = "#"+name+"-b-"+i;
-        if( i == nr ){
-            $( rb ).hide();
-        } else {
-            $( rb ).val( bands[i-1]);
-        }
-    }
-}
-
-function initialiseTable( which, rates, bands, defrates, defbands ){
-    var n = rates.length;
-    var target = which+ "-rows";
-    $( "#"+target ).children().remove();
-    var addDel = n > 1;
-    for( var i = 1; i <= n; i++ ){
-        insertRow( target, i, which, addDel );
-    }
-    loadTax( which, rates, bands, defrates, defbands );
-}
-
-function scrapeData(){
-    var tbs = scrapetax("tax");
-    // console.log( "tbs=" + tbs );
-    var nbs = scrapetax( "ni");
-    var data = {
-        taxrates: tbs[0],
-        taxbands: tbs[1],
-        nirates: nbs[0],
-        nibands: nbs[1],
-        taxallowance: parseFloat($( "#taxallowance" ).val()),
-        child_benefit: parseFloat( $( "#child_benefit" ).val()),
-        pension: parseFloat( $( "#pension" ).val()),
-        scottish_child_payment: parseFloat( $( "#scottish_child_payment" ).val()),
-        scp_age: parseInt( $( "#scp_age" ).val()),
-        uc_single: parseFloat( $( "#uc_single" ).val()),
-        uc_taper: parseFloat( $( "#uc_taper" ).val())
-    }
-    // console.log( "data.taxrates " + data.taxrates );
-    return data;
-}
-
-
-
-function populateForm( session_id, pars, defaults ){
-    initialiseTable( "tax",
-        pars.taxrates,
-        pars.taxbands,
-        defaults.taxrates,
-        defaults.taxbands );
-    initialiseTable( "ni",
-        pars.nirates,
-        pars.nibands,
-        defaults.nirates,
-        defaults.nibands
-            );
-    console.log( "setting the session_id to ", session_id );
-    setSessionId( session_id );
-    setVal( 'taxallowance', pars.taxallowance, defaults.taxallowance);
-    setVal( 'child_benefit', pars.child_benefit, defaults.child_benefit );
-    setVal( 'pension', pars.pension, defaults.pension );
-    setVal( 'scottish_child_payment', pars.scottish_child_payment, defaults.scottish_child_payment );
-    setVal( 'scp_age', pars.scp_age, defaults.scp_age );
-    setVal( 'uc_single', pars.uc_single, defaults.uc_single );
-    setVal( 'uc_taper', pars.uc_taper, defaults.uc_taper );
-}
-
-
-function get_output( uid ){
-    get_output_item( uid, 'children_gl', 'html');
-    get_output_item( uid, 'hhtype_gl', 'html');
-    get_output_item( uid, 'ten_gl', 'html');
-    get_output_item( uid, 'dec_gl', 'html');
-
-    get_output_item( uid, 'summary_graphs', 'svg');
-    get_output_item( uid, 'taxable_graph', 'svg');
-    get_output_item( uid, 'hbai', 'svg');
-    get_output_item( uid, 'lorenz_curve', 'svg');
-    get_output_item( uid, 'deciles', 'svg');
-    get_output_item( uid, 'metrs2', 'svg');
-    get_output_item( uid, 'metrs_hist', 'svg');
-}
-
-
-function initialise(){
+async function initialise(){
     var uid = null;
     uid = getUID();
     // initial parameters
     const url = [API,"params","get",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     console.log( "initialise; fetching " + url )
-    fetch(url)
+    await fetch(url)
         .then( response=>response.json())
         .then( data => {
             console.log("fetch params got data as " + data.uid);
@@ -780,7 +188,7 @@ function initialise(){
             }
     });
     console.log( "uid=" + uid );
-    get_output( uid );
+    await get_output( uid );
 }
 
 
