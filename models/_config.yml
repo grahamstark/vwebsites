@@ -25,21 +25,21 @@ github_username:  grahamstark
 # sizes for generated SVG images.
 svg_height: 625
 svg_width: 1008
-svg_viewBox: 0 0 2100 1297
+svg_viewBox: 0 0 2200 1297
 
-svg_width_long: 2016
+svg_width_long: 625
 svg_height_long: 1250
-svg_viewBox_long: 0 0 2100 2558
+svg_viewBox_long: 0 0 2200 2620
 
 svg_height_thumb: 120
 svg_width_thumb: 200
 svg_viewBox_thumb: 0 0 300 400
 
-svg_height_wide: 1250
-svg_width_wide: 1008
-svg_viewBox_wide: 0 0 4200 1297
+svg_height_wide: 625
+svg_width_wide: 2016
+svg_viewBox_wide: 0 0 4400 1297
 # We also maybe need a wide one ..
-
+# w="1000" h="1200" viewBox="0 0 2200 2620"
 # Build settings
 markdown: kramdown
 # theme: minima

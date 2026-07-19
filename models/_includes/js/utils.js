@@ -75,20 +75,11 @@ async function get_output_item( uid, item, datatype ){
                 const svgp = document.getElementById("ximg-"+item);
                 for( attr of ["width","height","viewBox"]){
                     var v = svgp.getAttribute( attr );
-                    container.setAttribute( attr, v );
+                    container.firstElementChild.setAttribute( attr, v );
                     console.log( "setting " + attr + " to " + v );
                 }
                 console.log( "container="+container);
                 svgp.remove();
-                /*
-                console.log(data);
-                var placeholder = document.createElement('div');
-                placeholder.innerHTML = data
-                var elem = placeholder.firstChild;
-                console.log( typeof( elem ));
-                container.appendChild(elem);
-                // placeholder.remove();
-                */
             }
         });
 }
