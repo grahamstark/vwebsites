@@ -5,7 +5,7 @@
 
 const BIG_A = 9999999999;
 
-const API = "http://microapi-local/";
+const API = {{page.whichapi}};
 
 function makeId( n, name, type ){
     var typename = makeTypename( type );

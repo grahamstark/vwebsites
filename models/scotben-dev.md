@@ -1,11 +1,11 @@
 ---
-title: Scotben Mini 2026
+title: Scotben Mini 2026 Dev version
 author: graham_s
 layout: scotben-2026
-permalink: /scotben-2026/
+permalink: /scotben-dev/
 order: 1
 category: Scotland
-whichapi: http://microapi-local/
+whichapi: http://microapi-dev/
 ---
 
 ## Scotben 2026
