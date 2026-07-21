@@ -1,7 +1,7 @@
 function scrapeData(){
-    var tbs = scrapetax("tax");
+    var tbs = scrapeTax("tax");
     // console.log( "tbs=" + tbs );
-    var nbs = scrapetax( "ni");
+    var nbs = scrapeTax( "ni");
     var data = {
         taxrates: tbs[0],
         taxbands: tbs[1],

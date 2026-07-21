@@ -77,6 +77,30 @@ function loadTax( name, rates, bands, defrates, defbands ){
     }
 }
 
+
+function scrapeTax( name ){
+    var rates = [];
+    var bands = [];
+    var nrt = "#"+name+"-n";
+    // console.log( "count nrt key = " + nrt );
+    var nr = parseInt($( nrt ).val());
+    // console.log( name + " : got nr as " + nr );
+    for( var i = 1; i <= nr; i++ ){
+        var rp = "#"+name+"-r-"+i;
+        var rb = "#"+name+"-b-"+i;
+        rates.push( parseFloat($( rp ).val()));
+        if( i < nr ){ // skip top bands
+            var rr = parseFloat($( rb ).val());
+            if( Number.isNaN(rr)){
+                rr = BIG_A;
+            }
+            bands.push( rr );
+        }
+    }
+    // console.log( "rates=" + rates );
+    return [rates, bands];
+}
+
 function initialiseTable( which, rates, bands, defrates, defbands ){
     var n = rates.length;
     var target = which+ "-rows";
@@ -87,3 +111,5 @@ function initialiseTable( which, rates, bands, defrates, defbands ){
     }
     loadTax( which, rates, bands, defrates, defbands );
 }
+
+
