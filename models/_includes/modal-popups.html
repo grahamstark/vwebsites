@@ -62,9 +62,12 @@ All the modal popups in one file - pick one ...
                 The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and
                 reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away.
             </p>
-            {% include svg-figure.html size="long" id="metrs2" caption="Histogram of Marginal Effective Tax Rates, pre- and post-. <a href=''>More Information</a>" %}
+            {% include svg-figure.html size="std" id="metrs2" caption="Histogram of Marginal Effective Tax Rates, pre- and post-. <a href=''>More Information</a>" %}
+
             <h4>Marginal Effective Tax Rates - Transitions</h4>
+            <div style='scale:85%'> <!-- hack - shrink to fit this big table -->
             {% include table-figure.html id='metrs_transitions' caption="This shows how the METRS of working-age people change as a result of your changes," %}
+            </div>
         </div> <!-- modal body -->
     </div> <!-- model content -->
 </div><!-- hidden div -->
