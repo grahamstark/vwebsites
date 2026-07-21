@@ -1,8 +1,8 @@
-function resetParams(){
+async function resetParams(){
 
 }
 
-function submitParams(){
+async function submitParams(){
     const formData = scrapeData();
     const uid = getUID();
     // FIXME
@@ -21,8 +21,8 @@ function submitParams(){
     }
 }
 
-function submitRun(){
-    await submitParams():
+async function submitRun(){
+    await submitParams();
     const url = [API,"run","submit",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     try{
         const response = await fetch(url, {method: "GET"});
