@@ -83,6 +83,8 @@ async function drawHeadlines( uid ){
     });
 }
 
+var defaults = null;
+
 async function initialise(){
     var uid = null;
     uid = getUID();
@@ -97,6 +99,9 @@ async function initialise(){
                 uid = data.uid;
                 setUID( uid );
             }
+            defaults = structuredClone(data.params);
+            populateForm( data.params, defaults );
+
     });
     console.log( "uid=" + uid );
     await drawHeadlines( uid );

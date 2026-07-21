@@ -19,9 +19,7 @@ function scrapeData(){
     return data;
 }
 
-
-
-function populateForm( session_id, pars, defaults ){
+function populateForm( pars, defaults ){
     initialiseTable( "tax",
         pars.taxrates,
         pars.taxbands,
@@ -33,8 +31,6 @@ function populateForm( session_id, pars, defaults ){
         defaults.nirates,
         defaults.nibands
             );
-    console.log( "setting the session_id to ", session_id );
-    setSessionId( session_id );
     setVal( 'taxallowance', pars.taxallowance, defaults.taxallowance);
     setVal( 'child_benefit', pars.child_benefit, defaults.child_benefit );
     setVal( 'pension', pars.pension, defaults.pension );
