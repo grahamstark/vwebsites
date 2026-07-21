@@ -6,7 +6,6 @@ function makeTypename( type ){
     return type=='rate' ? 'r' : 'b';
 }
 
-
 /**
  * action: like 'del-tax'
  * n : array index (from 1, not 0)
@@ -15,7 +14,7 @@ function editTable( action, n ){
     console.log( "action=", action, "n=", n );
     var tt = action.split("-");
     which = tt[1];
-    rbs = scrapetax( which );
+    rbs = scrapeTax( which );
     rates = rbs[0];
     bands = rbs[1];
 
