@@ -5,12 +5,30 @@
 
 const BIG_A = 9999999999;
 
-const API = {{page.whichapi}};
+const API = '{{page.whichapi}}';
 
 function makeId( n, name, type ){
     var typename = makeTypename( type );
     return name + "-" + typename + '-' + n;
 }
+
+const ARROWS_2 = {
+    "nonsig"          : "",
+    "positive_strong" : "<i class='bi bi-arrow-up-square-fill fs-3'></i>",
+    "positive_med"    : "<i class='bi bi-arrow-up-square fs-3'></i>",
+    "positive_weak"   : "<i class='bi bi-arrow-up-square fs-3'></i>",
+    "negative_strong" : "<i class='bi bi-arrow-down-square-fill fs-3'></i>",
+    "negative_med"    : "<i class='bi bi-arrow-down-square fs-3'></i>",
+    "negative_weak"   : "<i class='bi bi-arrow-down-square fs-3'></i>" };
+
+
+
+function summaryHeadline( val, direction, glclass ){
+    const arrow = ARROWS_2[direction];
+    return `<span class='${glclass} align-middle'><i class="bi ${arrow}"></i>&nbsp;${val}</span>`;
+}
+
+
 
 function makeInput( n, name, type ){
     var typename = makeTypename( type );
@@ -59,6 +77,18 @@ function setUID( uid ){
     localStorage.setItem("scotben-uid", uid );
 }
 
+async function getData( url ){
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+        const result = await response.json();
+        return result
+    } catch (error) {
+        console.error(error.message);
+    }
+}
 
 async function get_output_item( uid, item, datatype ){
     const url = [API,"output","fetch",MODEL,EDITION,datatype,item].join("/") + "?uid="+uid;
