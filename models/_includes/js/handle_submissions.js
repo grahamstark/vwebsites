@@ -25,7 +25,7 @@ async function submitParams(){
 async function submitRun(){
     await submitParams();
     const uid = getUID();
-    const url = [API,"run","submit",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
+    const url = [API,"run","submit",MODEL,EDITION].join("/") + "?uid="+uid;
     console.log( "submitting: " + url )
     try{
         await fetch(url)
