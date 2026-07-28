@@ -16,7 +16,7 @@ async function resetParams(){
 async function submitParams(){
     console.log("submitParams entered")
     const formData = scrapeData();
-    console.log( "got formData as " + formData );
+    console.log( "got formData as " + JSON.stringify(formData));
     const uid = getUID();
 
     // FIXME
