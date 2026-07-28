@@ -1,0 +1,5 @@
+#!/bin/sh
+~/.local/share/gem/ruby/3.3.0/bin/jekyll build --source blog/ --dest /var/www/stb-blog/ 
+~/.local/share/gem/ruby/3.3.0/bin/jekyll build --source models/ --dest /var/www/models/
+# /usr/local/bin/jekyll build --source vwsite/ --dest /var/www/vwsite/
+

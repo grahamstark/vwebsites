@@ -1,11 +1,24 @@
 async function resetParams(){
     const uid = getUID();
-
+    const url = [API,"params","initialise",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
+    try {
+        const response = await fetch(url, {
+            method: "GET"
+        });
+        console.log(await response.json());
+        await drawHeadlines( uid );
+        await getOutput( uid );
+    } catch(e) {
+        console.error(e);
+    }
 }
 
 async function submitParams(){
+    console.log("submitParams entered")
     const formData = scrapeData();
+    console.log( "got formData as " + formData );
     const uid = getUID();
+
     // FIXME
     const url = [API,"params","set",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     try {
