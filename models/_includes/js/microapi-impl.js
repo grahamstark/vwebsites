@@ -83,12 +83,16 @@ async function drawHeadlines( uid ){
 
 var defaults = null;
 
-function toggleSubmitButtons( validator ){
-    const errors = validator.numberOfInvalids() > 0;
-    console.log( "initialise; invalidHandler called errors are " + errors );
-    if (errors) {
-        $( "#submit-1").prop("disabled", true );
-        $( "#submit-1").removeClass( "btn-info").addClass( "btn-secondary");
+/**
+ * Disable the submit buttons whenver
+ */
+function toggleSubmitButtons( hasErrors, disableRunOnly ){
+    console.log( "initialise; invalidHandler called errors are " + hasErrors );
+    if (hasErrors) {
+        if( ! disableRunOnly ){
+            $( "#submit-1").prop("disabled", true );
+            $( "#submit-1").removeClass( "btn-info").addClass( "btn-secondary");
+        }
         $( "#run-1").prop("disabled", true );
         $( "#run-1").removeClass( "btn-success").addClass( "btn-secondary");
     } else {
@@ -120,10 +124,12 @@ async function initialise(){
     console.log( "uid=" + uid );
     var validator = $("#mainform").validate({
         highlight: function(element, errorClass, validClass){
-            toggleSubmitButtons( validator );
+            const hasErrors = validator.numberOfInvalids() > 0;
+            toggleSubmitButtons( hasErrors, false );
         },
         unhighlight: function(element, errorClass, validClass){
-            toggleSubmitButtons( validator );
+            const hasErrors = validator.numberOfInvalids() > 0;
+            toggleSubmitButtons( hasErrors, false );
         }
     }); // jquery validation
     await drawHeadlines( uid );
