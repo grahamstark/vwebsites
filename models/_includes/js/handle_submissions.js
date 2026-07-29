@@ -31,9 +31,14 @@ async function submitParams(){
         const response = await fetch( url, {
             method: "POST",
             // Set the FormData instance as the request body
-            body: formData
+            body: JSON.stringify(formData)
         });
-        console.log( JSON.stringify(response));
+        const data = await response.json();
+        console.log( "response " + data );
+        ruid = data.uid
+        errors  = data.errors;
+        params =  data.params;
+        console.log( "errors " + JSON.stringify(errors) + " params " + JSON.stringify(params) + " ruid " + ruid );
         await drawHeadlines( uid );
         await getOutput( uid );
     } catch(e) {

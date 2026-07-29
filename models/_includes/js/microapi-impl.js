@@ -83,6 +83,22 @@ async function drawHeadlines( uid ){
 
 var defaults = null;
 
+function toggleSubmitButtons( validator ){
+    const errors = validator.numberOfInvalids() > 0;
+    console.log( "initialise; invalidHandler called errors are " + errors );
+    if (errors) {
+        $( "#submit-1").prop("disabled", true );
+        $( "#submit-1").removeClass( "btn-info").addClass( "btn-secondary");
+        $( "#run-1").prop("disabled", true );
+        $( "#run-1").removeClass( "btn-success").addClass( "btn-secondary");
+    } else {
+        $( "#submit-1").prop("disabled", false );
+        $( "#submit-1").removeClass( "btn-secondary" ).addClass( "btn-info");
+        $( "#run-1").prop("disabled", false );
+        $( "#run-1").removeClass( "btn-secondary" ).addClass( "btn-success");
+    }
+}
+
 async function initialise(){
     var uid = null;
     uid = getUID();
@@ -102,6 +118,14 @@ async function initialise(){
 
     });
     console.log( "uid=" + uid );
+    var validator = $("#mainform").validate({
+        highlight: function(element, errorClass, validClass){
+            toggleSubmitButtons( validator );
+        },
+        unhighlight: function(element, errorClass, validClass){
+            toggleSubmitButtons( validator );
+        }
+    }); // jquery validation
     await drawHeadlines( uid );
     await getOutput( uid );
 }
