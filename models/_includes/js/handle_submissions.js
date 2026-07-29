@@ -1,3 +1,7 @@
+/**
+ *
+ *
+ */
 async function resetParams(){
     const uid = getUID();
     const url = [API,"params","initialise",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
@@ -8,26 +12,28 @@ async function resetParams(){
         console.log(await response.json());
         await drawHeadlines( uid );
         await getOutput( uid );
+        await populateForm( response.data, defaults )
     } catch(e) {
         console.error(e);
     }
 }
 
+/**
+ *
+ */
 async function submitParams(){
     console.log("submitParams entered")
     const formData = scrapeData();
     console.log( "got formData as " + JSON.stringify(formData));
     const uid = getUID();
-
-    // FIXME
     const url = [API,"params","set",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     try {
-        const response = await fetch(url, {
+        const response = await fetch( url, {
             method: "POST",
             // Set the FormData instance as the request body
-            body: formData,
+            body: formData
         });
-        console.log(await response.json());
+        console.log( JSON.stringify(response));
         await drawHeadlines( uid );
         await getOutput( uid );
     } catch(e) {
@@ -35,6 +41,9 @@ async function submitParams(){
     }
 }
 
+/**
+ *
+ */
 async function submitRun(){
     await submitParams();
     const uid = getUID();

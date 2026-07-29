@@ -15,7 +15,6 @@ function scrapeData(){
         uc_single: parseFloat( $( "#uc_single" ).val()),
         uc_taper: parseFloat( $( "#uc_taper" ).val())
     }
-    // console.log( "data.taxrates " + data.taxrates );
     return data;
 }
 
@@ -29,8 +28,7 @@ function populateForm( pars, defaults ){
         pars.nirates,
         pars.nibands,
         defaults.nirates,
-        defaults.nibands
-            );
+        defaults.nibands );
     setVal( 'taxallowance', pars.taxallowance, defaults.taxallowance);
     setVal( 'child_benefit', pars.child_benefit, defaults.child_benefit );
     setVal( 'pension', pars.pension, defaults.pension );

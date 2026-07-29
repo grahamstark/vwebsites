@@ -42,6 +42,13 @@ function makeAddDel( n, name, isdel ){
     return "<span onclick='editTable(\""+action+"\", "+n+")' ><i class=\""+icon+"\" style=\"font-size: 1rem\"></i></span>";
 }
 
+/**
+ * Make a row in a rate/band array - just the input fields.
+ *
+ * @n index (from 1)
+ * @parm name base name of each field - counts and rate/band are added
+ * @param addDel - boolean on whether to add 'delete/add' buttons on the right
+ */
 function makeRow( n, name, addDel ){
     const id = name+"-"+n;
     var row = "<tr id='"+id+"'><td>"+makeInput( n, name, 'rate' )+"</td><td>"+makeInput( n, name, 'band' )+"</td><td  class='align-middle'>"+makeAddDel( n, name, false )+"</td>";
@@ -59,6 +66,12 @@ function insertRow( which, n, name, addRow ){
     $("#"+which ).append( makeRow( n, name, addRow ));
 }
 
+/*
+ * fill the tax/ni rate band fields
+ * @name - e.g. 'no' or 'it'
+ * @rates @bands - arrays of values
+ * @defrates @defbands - arrays of default values
+ */
 function loadTax( name, rates, bands, defrates, defbands ){
     var nr = rates.length;
     var nb = bands.length;
@@ -68,7 +81,7 @@ function loadTax( name, rates, bands, defrates, defbands ){
         var rp = "#"+name+"-r-"+i;
         $( rp ).val( rates[i-1]);
         var rb = "#"+name+"-b-"+i;
-        if( i == nr ){
+        if( i == nr ){ // no band displayed at the top - just the rate
             $( rb ).hide();
         } else {
             $( rb ).val( bands[i-1]);
@@ -76,7 +89,10 @@ function loadTax( name, rates, bands, defrates, defbands ){
     }
 }
 
-
+/*
+ * scrape the paired rate/band arroys.
+ * @name - e.g. 'no' or 'it'
+ */
 function scrapeTax( name ){
     var rates = [];
     var bands = [];

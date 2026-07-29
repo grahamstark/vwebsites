@@ -1,33 +1,31 @@
 
-
-
 async function getOutput( uid ){
-    await get_output_item( uid, 'children_gl', 'html');
-    await get_output_item( uid, 'hhtype_gl', 'html');
-    await get_output_item( uid, 'ten_gl', 'html');
-    await get_output_item( uid, 'dec_gl', 'html');
-    await get_output_item( uid, 'metrs_transitions', 'html' );
-    await get_output_item( uid, 'sfc', 'html' );
-    await get_output_item( uid, 'detailed_costs', 'html' );
-    await get_output_item( uid, 'costs_table', 'html' );
+    await getOutputItem( uid, 'children_gl', 'html');
+    await getOutputItem( uid, 'hhtype_gl', 'html');
+    await getOutputItem( uid, 'ten_gl', 'html');
+    await getOutputItem( uid, 'dec_gl', 'html');
+    await getOutputItem( uid, 'metrs_transitions', 'html' );
+    await getOutputItem( uid, 'sfc', 'html' );
+    await getOutputItem( uid, 'detailed_costs', 'html' );
+    await getOutputItem( uid, 'costs_table', 'html' );
 
-    await get_output_item( uid, 'poverty_transitions', 'html' );
-    await get_output_item( uid, 'poverty_summary', 'html' );
-    await get_output_item( uid, 'inequality_summary', 'html' );
+    await getOutputItem( uid, 'poverty_transitions', 'html' );
+    await getOutputItem( uid, 'poverty_summary', 'html' );
+    await getOutputItem( uid, 'inequality_summary', 'html' );
 
-    // await get_output_item( uid, 'summary_graphs', 'svg');
-    await get_output_item( uid, 'taxable_graph', 'svg');
-    await get_output_item( uid, 'hbai', 'svg');
-    await get_output_item( uid, 'lorenz_curve', 'svg');
-    await get_output_item( uid, 'deciles', 'svg');
-    await get_output_item( uid, 'metrs2', 'svg');
-    // await get_output_item( uid, 'metrs_hist', 'svg');
+    // await getOutputItem( uid, 'summary_graphs', 'svg');
+    await getOutputItem( uid, 'taxable_graph', 'svg');
+    await getOutputItem( uid, 'hbai', 'svg');
+    await getOutputItem( uid, 'lorenz_curve', 'svg');
+    await getOutputItem( uid, 'deciles', 'svg');
+    await getOutputItem( uid, 'metrs2', 'svg');
+    // await getOutputItem( uid, 'metrs_hist', 'svg');
 }
 
 
 async function drawHeadlines( uid ){
     const url = [API,"output","fetch",MODEL,EDITION,'json','headlines'].join("/") + "?uid="+uid;
-    console.log( "get_output_item; fetching " + url );
+    console.log( "getOutputItem; fetching " + url );
     await fetch( url )
     .then( response => response.json())
     .then( data => {

@@ -21,14 +21,10 @@ const ARROWS_2 = {
     "negative_med"    : "<i class='bi bi-arrow-down-square fs-3'></i>",
     "negative_weak"   : "<i class='bi bi-arrow-down-square fs-3'></i>" };
 
-
-
 function summaryHeadline( val, direction, glclass ){
     const arrow = ARROWS_2[direction];
     return `<span class='${glclass} align-middle'><i class="bi ${arrow}"></i>&nbsp;${val}</span>`;
 }
-
-
 
 function makeInput( n, name, type ){
     var typename = makeTypename( type );
@@ -77,6 +73,7 @@ function setUID( uid ){
     localStorage.setItem("scotben-uid", uid );
 }
 
+/*
 async function getData( url ){
     try {
         const response = await fetch(url);
@@ -89,8 +86,9 @@ async function getData( url ){
         console.error(error.message);
     }
 }
+*/
 
-async function get_output_item( uid, item, datatype ){
+async function getOutputItem( uid, item, datatype ){
     const url = [API,"output","fetch",MODEL,EDITION,datatype,item].join("/") + "?uid="+uid;
     console.log( "get_output_item; fetching " + url );
     itemid = datatype == 'svg' ? 'img-' + item : 'tab-' + item; // FIXME expand this jason at least
@@ -102,6 +100,7 @@ async function get_output_item( uid, item, datatype ){
             var container = document.getElementById(itemid);
             container.innerHTML = data;
             if( datatype == 'svg'){
+                // FIXME this doesn't work on referesh. ximg- is missing 2nd time.
                 const svgp = document.getElementById("ximg-"+item);
                 for( attr of ["width","height","viewBox"]){
                     var v = svgp.getAttribute( attr );
