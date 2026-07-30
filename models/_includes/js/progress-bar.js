@@ -1,7 +1,7 @@
 
 var updater;
 
-function drawRunProgress( data ){
+function makeProgressBar( data ){
     console.log( "data.count" + data.count + "data.size" + data.size );
     var pct = Math.trunc(100 * data.count / data.size);
     var runn = "Model Running";
@@ -48,7 +48,7 @@ function updateProgress( result ){
             $("#progress-indicator").html( "<div class='alert alert-info' role='alert'>Pre-routines completed; run starting.</div>");
             break;
         case 'run':
-            drawRunProgress( result.data );
+            makeProgressBar( result.data );
             break;
         case 'do-one-run-end':
             $("#progress-indicator").html( "<div class='alert alert-info' role='alert'>End of main calculations.</div>");
@@ -79,7 +79,7 @@ todo integer,
 timer timestamp,
 */
 
-function createUpdater( uid ){
+async function createUpdater( uid ){
     const url = [API,"run","monitor",MODEL,EDITION].join("/") + "?uid="+uid;
     const updater = $.PeriodicalUpdater(url, {
         url: uri,         // URL of ajax request
@@ -102,14 +102,9 @@ function createUpdater( uid ){
             case 'output_ready':
                 $("#progress-indicator").html( "<div></div>" );
                 console.log( "main; loading output" );
-                loadParams(
-                responseFromUpdater.data.default_params,
-                responseFromUpdater.data.params );
-                createMainOutputs(
-                responseFromUpdater.data.html,
-                responseFromUpdater.data.xlsxfile);
-                console.log("stopping updater");
-
+                await populateForm( params, defaults );
+                await drawHeadlines( uid );
+                await getOutput( uid );
                 updater.stop();
                 break;
             case 'has_progress':

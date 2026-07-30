@@ -74,7 +74,7 @@ async function submitRun(){
     console.log( "submitting: " + url )
     try{
         data = await sendParams( uid, url );
-
+        updater = await createUpdater( uid );
     } catch(e) {
         console.error(e);
     }

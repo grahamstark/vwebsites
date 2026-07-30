@@ -33,7 +33,8 @@ async function drawHeadlines( uid ){
         $('#headlines-gainers').text(headlines.gainers);
         $('#headlines-losers').text(headlines.losers);
         $('#headlines-nochange').text(headlines.no_change);
-        console.log( " headlines.net_direct " + JSON.stringify( headlines.net_direct ));
+        console.log( " headlines.tax" + JSON.stringify( headlines.tax ));
+        console.log( " headlines.pov_headcount" + JSON.stringify( headlines.pov_headcount ));
         $('#headlines-net-direct').html(summaryHeadline(
             headlines.net_direct.unsigned_num_str,
             headlines.net_direct.arrow,
@@ -41,43 +42,43 @@ async function drawHeadlines( uid ){
         $('#headlines-tax').html(summaryHeadline(
             headlines.tax.unsigned_change_str,
             headlines.tax.arrow,
-            headlines.tax.glclass ));
+            headlines.tax.glcolours[0] ));
         $('#headlines-benefits').html(summaryHeadline(
             headlines.benefits.unsigned_change_str,
             headlines.benefits.arrow,
-            headlines.benefits.glclass ));
+            headlines.benefits.glcolours[0]  ));
         $('#headlines-mean-metrs').html(summaryHeadline(
             headlines.mean_metrs.unsigned_change_str,
             headlines.mean_metrs.arrow,
-            headlines.mean_metrs.glclass ));
+            headlines.mean_metrs.glcolours[0]  ));
         $('#headlines-median-metrs').html(summaryHeadline(
             headlines.median_metrs.unsigned_change_str,
             headlines.median_metrs.arrow,
-            headlines.median_metrs.glclass ));
+            headlines.median_metrs.glcolours[0]  ));
         $('#headlines-pov-headcount').html(summaryHeadline(
             headlines.pov_headcount.unsigned_change_str,
             headlines.pov_headcount.arrow,
-            headlines.pov_headcount.glclass ));
+            headlines.pov_headcount.glcolours[0]  ));
         $('#headlines-child-poverty').html(summaryHeadline(
             headlines.child_poverty.unsigned_change_str,
             headlines.child_poverty.arrow,
-            headlines.child_poverty.glclass ));
+            headlines.child_poverty.glcolours[0]  ));
         $('#headlines-gini').html(summaryHeadline(
             headlines.gini.unsigned_change_str,
             headlines.gini.arrow,
-            headlines.gini.glclass ));
+            headlines.gini.glcolours[0]  ));
         $('#headlines-palma').html(summaryHeadline(
             headlines.palma.unsigned_change_str,
             headlines.palma.arrow,
-            headlines.palma.glclass ));
+            headlines.palma.glcolours[0]  ));
         $('#headlines-mean-income').html(summaryHeadline(
             headlines.mean_income.unsigned_change_str,
             headlines.mean_income.arrow,
-            headlines.mean_income.glclass ));
+            headlines.mean_income.glcolours[0]  ));
         $('#headlines-median-income').html(summaryHeadline(
             headlines.median_income.unsigned_change_str,
             headlines.median_income.arrow,
-            headlines.median_income.glclass ));
+            headlines.median_income.glcolours[0]  ));
     });
 }
 
