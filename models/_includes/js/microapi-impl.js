@@ -33,7 +33,7 @@ async function drawHeadlines( uid ){
         $('#headlines-gainers').text(headlines.gainers);
         $('#headlines-losers').text(headlines.losers);
         $('#headlines-nochange').text(headlines.no_change);
-
+        console.log( " headlines.net_direct " + JSON.stringify( headlines.net_direct ));
         $('#headlines-net-direct').html(summaryHeadline(
             headlines.net_direct.unsigned_num_str,
             headlines.net_direct.arrow,

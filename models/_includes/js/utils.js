@@ -73,21 +73,6 @@ function setUID( uid ){
     localStorage.setItem("scotben-uid", uid );
 }
 
-/*
-async function getData( url ){
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
-        }
-        const result = await response.json();
-        return result
-    } catch (error) {
-        console.error(error.message);
-    }
-}
-*/
-
 async function getOutputItem( uid, item, datatype ){
     const url = [API,"output","fetch",MODEL,EDITION,datatype,item].join("/") + "?uid="+uid;
     console.log( "get_output_item; fetching " + url );
@@ -100,15 +85,16 @@ async function getOutputItem( uid, item, datatype ){
             var container = document.getElementById(itemid);
             container.innerHTML = data;
             if( datatype == 'svg'){
-                // FIXME this doesn't work on referesh. ximg- is missing 2nd time.
-                const svgp = document.getElementById("ximg-"+item);
-                for( attr of ["width","height","viewBox"]){
-                    var v = svgp.getAttribute( attr );
+                // For convoluted reasons, we store intended svg sizes in data- fields
+                // in the surrounding <div>. This retrieves them and writes them into the
+                // SVG item
+                for( attr of ["width","height","viewbox"]){
+                    var v = container.getAttribute( "data-"+attr );
                     container.firstElementChild.setAttribute( attr, v );
-                    console.log( "setting " + attr + " to " + v );
+                    // console.log( "setting " + attr + " to " + v );
                 }
                 console.log( "container="+container);
-                svgp.remove();
+                // svgp.remove();
             }
         });
 }
