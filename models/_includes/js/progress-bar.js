@@ -79,10 +79,10 @@ todo integer,
 timer timestamp,
 */
 
-async function createUpdater( uid ){
+function createUpdater( uid ){
     const url = [API,"run","monitor",MODEL,EDITION].join("/") + "?uid="+uid;
     const updater = $.PeriodicalUpdater(url, {
-        url: uri,         // URL of ajax request
+        url: url,         // URL of ajax request
         cache: false,     // By default, don't allow caching
         method: 'GET',    // method; get or post
         // data: ,
@@ -96,7 +96,7 @@ async function createUpdater( uid ){
         cookie: false,    // whether (and how) to store a cookie
         runatonce: true, // Whether to fire initially or wait
         verbose: 0        // The level to be logging at: 0 = none; 1 = some; 2 = all
-        }, function( responseFromUpdater, success, xhr, handle) {
+        }, async function( responseFromUpdater, success, xhr, handle) {
         console.log( "progress: got %o", responseFromUpdater );
         switch( responseFromUpdater.response ){
             case 'output_ready':
