@@ -81,6 +81,7 @@ timer timestamp,
 
 function createUpdater( uid, rid ){
     const url = [API,"run","monitor",MODEL,EDITION].join("/") + "?uid="+uid+"&rid="+rid;
+    console.log( "createUpdater; url='%o'", url );
     return $.PeriodicalUpdater(url, {
         url: url,         // URL of ajax request
         cache: false,     // By default, don't allow caching
