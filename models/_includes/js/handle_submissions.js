@@ -73,10 +73,9 @@ async function submitRun(){
     const url = [API,"run","submit",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     console.log( "submitting: " + url )
     try{
-        data = await sendParams( uid, url );
-        // upda
+        const data = await sendParams( uid, url );
+        // updater is a global variable
         updater = await createUpdater( uid, data.rid );
-
     } catch(e) {
         console.error(e);
     }
