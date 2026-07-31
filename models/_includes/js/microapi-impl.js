@@ -85,7 +85,7 @@ async function drawHeadlines( uid ){
 var defaults = null;
 
 /**
- * Disable the submit buttons whenver
+ * Disable the submit buttons whenever jq validate finds an error
  */
 function toggleSubmitButtons( hasErrors, disableRunOnly ){
     console.log( "initialise; invalidHandler called errors are " + hasErrors );

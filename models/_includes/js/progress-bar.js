@@ -79,9 +79,9 @@ todo integer,
 timer timestamp,
 */
 
-function createUpdater( uid ){
-    const url = [API,"run","monitor",MODEL,EDITION].join("/") + "?uid="+uid;
-    const updater = $.PeriodicalUpdater(url, {
+function createUpdater( uid, rid ){
+    const url = [API,"run","monitor",MODEL,EDITION].join("/") + "?uid="+uid+"&rid="+rid;
+    return $.PeriodicalUpdater(url, {
         url: url,         // URL of ajax request
         cache: false,     // By default, don't allow caching
         method: 'GET',    // method; get or post
@@ -117,7 +117,6 @@ function createUpdater( uid ){
                 break;
         }
     });
-    return updater;
 }
 
 
