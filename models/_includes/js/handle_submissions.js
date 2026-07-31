@@ -13,6 +13,8 @@ async function resetParams(){
         const ruid = data.uid
         const errors  = data.errors;
         const params =  data.params;
+        const rid = data.runid;
+        setDisplayedRID( rid );
         console.log( "resetParams: errors " + JSON.stringify( errors) +
             " params " + JSON.stringify( params ) +
             " defaults " + JSON.stringify( defaults ));
@@ -38,6 +40,8 @@ async function sendParams( uid, url ){
     const ruid = data.uid
     const errors  = data.errors;
     const params =  data.params;
+    const rid = data.runid;
+    setDisplayedRID( rid );
     console.log( "errors " + JSON.stringify(errors) + " params " + JSON.stringify(params) + " ruid " + ruid );
     if(Object.keys(errors).length == 0){
         await populateForm( params, defaults );
@@ -70,12 +74,15 @@ async function submitParams(){
 async function submitRun(){
     await submitParams();
     const uid = getUID();
+    // this is the run_id that will run
+    var rid = getDisplayedRID();
     const url = [API,"run","submit",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     console.log( "submitting: " + url )
     try{
         const data = await sendParams( uid, url );
+        console.log( "submitRun; got data %o ", data );
         // updater is a global variable
-        updater = await createUpdater( uid, data.rid );
+        updater = await createUpdater( uid, rid );
     } catch(e) {
         console.error(e);
     }

@@ -53,24 +53,49 @@ function setVal( id, val, def ){
     }
 }
 
-function getUID(){
-    var uid = localStorage.getItem( "scotben-uid");
-    console.log( "got uid from local storage as " + uid + "; datatype is " + typeof(uid));
-    if((! uid )||(uid == 'undefined')){
-        uid = $( "#scotben-uid" ).val();
-        console.log( "getUID; retrieving from input field; set to " + uid );
-        if(! uid ){
-            localStorage.setItem( "scotben-uid", uid );
+function getSomething( key ){
+    var thing = localStorage.getItem( key );
+    console.log( "got "+key+" from local storage as " + thing + "; datatype is " + typeof(thing));
+    if((! thing )||(thing == 'undefined')){
+        uid = $( "#"+key ).val();
+        console.log( "getSomething; retrieving from input field; set to " + thing );
+        if(! thing ){
+            localStorage.setItem( key, thing );
         }
     }
-    console.log( "getUID; got id as ", uid );
-    return uid;
+    console.log( "getUID; got thing as ",  thing );
+    return thing;
+}
+
+function setSomething( key, thing ){
+    // localStorage.setItem( "uid", uid );
+    $( "#"+key ).val( thing );
+    localStorage.setItem( key, thing );
+}
+
+
+function getUID(){
+    return getSomething( "scotben-uid");
 }
 
 function setUID( uid ){
-    // localStorage.setItem( "uid", uid );
-    $( "#uid" ).val( uid );
-    localStorage.setItem("scotben-uid", uid );
+    setSomething("scotben-uid", uid );
+}
+
+function setDisplayedRID( rid ){
+    setSomething("scotben-displayed-rid", rid );
+}
+
+function getDisplayedRID(){
+    return getSomething( "scotben-displayed-rid");
+}
+
+function setRunningRID( rid ){
+    setSomething("scotben-running-rid", rid );
+}
+
+function getRunningRID(){
+    return getSomething( "scotben-running-rid");
 }
 
 async function getOutputItem( uid, item, datatype ){
