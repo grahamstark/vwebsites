@@ -99,8 +99,10 @@ function createUpdater( uid, rid ){
         verbose: 0        // The level to be logging at: 0 = none; 1 = some; 2 = all
         }, async function( responseFromUpdater, success, xhr, handle) {
         console.log( "progress: got %o", responseFromUpdater );
-        switch( responseFromUpdater.response ){
-            case 'output_ready':
+        console.log( " isarray " + Array.isArray( responseFromUpdater ));
+        console.log( upd.phase )
+        switch( responseFromUpdater.qstatus ){
+            case 'D':
                 $("#progress-indicator").html( "<div></div>" );
                 console.log( "main; loading output" );
                 await populateForm( params, defaults );
@@ -108,9 +110,11 @@ function createUpdater( uid, rid ){
                 await getOutput( uid );
                 updater.stop();
                 break;
-            case 'has_progress':
+            case 'X':
                 updateProgress( responseFromUpdater );
                 break;
+            case 'Q':
+
             case 'please_stop':
                 updater.stop();
             case 'no_progress':
