@@ -1,34 +1,32 @@
 
 var updater;
 
-function makeProgressBar( data ){
-    console.log( "data.count" + data.count + "data.size" + data.size );
-    var pct = Math.trunc(100 * data.count / data.size);
-    var runn = "Model Running";
-    var colour = "bg-success";
-    if( data.phase == 'health' ){
-        runn = "Estimating Health";
-        colour = "bg-info";
-    }
+function makeProgressBar( progress ){
+    var prog = "<p>Model Running</p>";;
+    const colour = "bg-success";
 
-    var prog =
-    "<p>" + runn + "</p>"+
-    "<div class='progress'>"+
-    "<div class='progress-bar " + colour +" progress-bar-animated progress-bar-striped' role='progressbar' "+
-    "aria-valuenow='" + pct + "' " +
-    "style='width: "+pct+"%' " +
-    "aria-valuemin='0' " +
-    "aria-valuemax='100'>"+
-    pct + "%" +
-    "</div> "+
-    "</div>";
-    console.log( "prog="+prog )
+    for( var i = 0; i < progress.length; i++ ){
+        var p = progress[i];
+        console.log( "data.count" + p.count + "data.size" + p.size );
+        const pct = Math.trunc(100 * p.count / p.size);
+        prog += "<div class='progress'>"+
+            "<div class='progress-bar " + colour +" progress-bar-animated progress-bar-striped' role='progressbar' "+
+            "aria-valuenow='" + pct + "' " +
+            "style='width: "+pct+"%' " +
+            "aria-valuemin='0' " +
+            "aria-valuemax='100'>"+
+            "thread: " + i + " completed: " + pct + "%" +
+            "</div> "+
+            "</div><br/>";
+    }
     $("#progress-indicator").html( prog );
 }
 
-function updateProgress( result ){
-    console.log( "updateSTB  result.phase = " + result.data.phase );
-    switch( result.data.phase ){
+function updateProgress( progress ){
+    console.log( " isarray " + Array.isArray( progress ));
+    const p0 = progress[0];
+    console.log( "updateSTB  result.phase = " + p0.phase );
+    switch( p0.phase ){
         case 'queued':
             $("#progress-indicator").html( "<div class='alert alert-info' role='alert'>Run is in the job queue waiting to start.</div>");
             break;
@@ -48,7 +46,7 @@ function updateProgress( result ){
             $("#progress-indicator").html( "<div class='alert alert-info' role='alert'>Pre-routines completed; run starting.</div>");
             break;
         case 'run':
-            makeProgressBar( result.data );
+            makeProgressBars( progress );
             break;
         case 'do-one-run-end':
             $("#progress-indicator").html( "<div class='alert alert-info' role='alert'>End of main calculations.</div>");
@@ -77,6 +75,17 @@ phase text not null,
 completed integer default 0,
 todo integer,
 timer timestamp,
+
+
+('E', 'Editing'),
+('L', 'Locked'),
+('Q', 'Queued/Submitted'),
+('X', 'Executing'),
+('C', 'Completed'),
+('D', 'Displayed'),
+('Z', 'Errored');
+
+
 */
 
 function createUpdater( uid, rid ){
@@ -99,8 +108,7 @@ function createUpdater( uid, rid ){
         verbose: 0        // The level to be logging at: 0 = none; 1 = some; 2 = all
         }, async function( responseFromUpdater, success, xhr, handle) {
         console.log( "progress: got %o", responseFromUpdater );
-        console.log( " isarray " + Array.isArray( responseFromUpdater ));
-        console.log( upd.phase )
+        console.log( responseFromUpdater.qstatus )
         switch( responseFromUpdater.qstatus ){
             case 'D':
                 $("#progress-indicator").html( "<div></div>" );
@@ -111,9 +119,9 @@ function createUpdater( uid, rid ){
                 updater.stop();
                 break;
             case 'X':
-                updateProgress( responseFromUpdater );
-                break;
             case 'Q':
+                updateProgress( responseFromUpdater.progress );
+                break;
 
             case 'please_stop':
                 updater.stop();
