@@ -1,32 +1,44 @@
 
 var updater;
 
-function makeProgressBar( progress ){
-    var prog = "<p>Model Running</p>";;
+function makeProgressBars( progress ){
+    var prog = "<p>Model Running</p>";
     const colour = "bg-success";
-
+    console.log( "progress.length = " + progress.length );
     for( var i = 0; i < progress.length; i++ ){
-        var p = progress[i];
-        console.log( "data.count" + p.count + "data.size" + p.size );
-        const pct = Math.trunc(100 * p.count / p.size);
-        prog += "<div class='progress'>"+
-            "<div class='progress-bar " + colour +" progress-bar-animated progress-bar-striped' role='progressbar' "+
-            "aria-valuenow='" + pct + "' " +
-            "style='width: "+pct+"%' " +
-            "aria-valuemin='0' " +
-            "aria-valuemax='100'>"+
-            "thread: " + i + " completed: " + pct + "%" +
-            "</div> "+
-            "</div><br/>";
+        const p = progress[i];
+        console.log( "p=%o", p );
+        if((p.phase == 'run')&&(p.thread_no >=0)){
+            console.log( "p.completed=" + p.completed + "p.todo=" + p.todo );
+            const pct = Math.trunc(100 * p.completed / p.todo );
+            prog += "<div class='progress'>"+
+                "<div class='progress-bar " + colour +" progress-bar-animated progress-bar-striped' role='progressbar' "+
+                "aria-valuenow='" + pct + "' " +
+                "style='width: "+pct+"%' " +
+                "aria-valuemin='0' " +
+                "aria-valuemax='100'>"+
+                "thread: " + p.thread_no + " completed: " + pct + "%" +
+                "</div> "+
+                "</div><br/>";
+        }
     }
+    console.log( "made progress bar as " + prog )
     $("#progress-indicator").html( prog );
 }
 
 function updateProgress( progress ){
     console.log( " isarray " + Array.isArray( progress ));
-    const p0 = progress[0];
-    console.log( "updateSTB  result.phase = " + p0.phase );
-    switch( p0.phase ){
+    var phase = '';
+    switch(progress.length){
+        case 0:
+            return;
+        case 1:
+            phase = progress[0].phase;
+        default:
+            phase = 'run'
+    }
+    console.log( "updateSTB  result.phase = " + phase );
+    switch( phase ){
         case 'queued':
             $("#progress-indicator").html( "<div class='alert alert-info' role='alert'>Run is in the job queue waiting to start.</div>");
             break;
@@ -60,7 +72,7 @@ function updateProgress( progress ){
             // updater.stop();
             break;
         default:
-            $("#progress-indicator").html( "<div class='alert alert-danger' role='alert'>Problem: run phase "+result.data.phase+".</div>");
+            $("#progress-indicator").html( "<div class='alert alert-danger' role='alert'>Problem: unknown run phase "+p0.phase+".</div>");
             break;
     }
 }
@@ -113,9 +125,9 @@ function createUpdater( uid, rid ){
             case 'D':
                 $("#progress-indicator").html( "<div></div>" );
                 console.log( "main; loading output" );
-                await populateForm( params, defaults );
-                await drawHeadlines( uid );
-                await getOutput( uid );
+                // await populateForm( params, defaults );
+                await drawHeadlines( responseFromUpdater.uid );
+                await getOutput( responseFromUpdater.uid );
                 updater.stop();
                 break;
             case 'X':
