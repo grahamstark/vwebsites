@@ -6,19 +6,17 @@ async function resetParams(){
     const uid = getUID();
     const url = [API,"params","initialise",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     try {
-        const response = await fetch(url, {
-            method: "GET"
-        });
+        const response = await fetch(url, { method: "GET" });
         const data = await response.json();
         const ruid = data.uid
         const errors  = data.errors;
         const params =  data.params;
         const rid = data.runid;
         setDisplayedRID( rid );
-        console.log( "resetParams: errors " + JSON.stringify( errors) +
-            " params " + JSON.stringify( params ) +
-            " defaults " + JSON.stringify( defaults ));
+        console.log( "resetParams: errors %o ", errors,
+            " params %o ", params );
         if(Object.keys(errors).length == 0){
+            console.log( "resetParams; setting output to ruid=" + ruid + " uid=" + uid );
             await populateForm( params, defaults );
             await drawHeadlines( uid );
             await getOutput( uid );
@@ -43,10 +41,8 @@ async function sendParams( uid, url ){
     const rid = data.runid;
     setDisplayedRID( rid );
     console.log( "errors " + JSON.stringify(errors) + " params " + JSON.stringify(params) + " ruid " + ruid );
-    if(Object.keys(errors).length == 0){
+    if( Object.keys(errors).length == 0){
         await populateForm( params, defaults );
-        await drawHeadlines( uid );
-        await getOutput( uid );
     } else {
         console.log( "sendParams:: error! " + JSON.stringify( errors ));
     }
@@ -61,7 +57,12 @@ async function submitParams(){
     const uid = getUID();
     const url = [API,"params","set",MODEL,EDITION,SUBSYS].join("/") + "?uid="+uid;
     try {
-        data = await sendParams( uid, url )
+        data = await sendParams( uid, url );
+        console.log( "submitParams; after sendParams got data as %o", data );
+        if(data.output_is_cached){
+            await drawHeadlines( uid );
+            await getOutput( uid );
+        }
     } catch(e) {
         console.error(e);
     }
@@ -80,9 +81,15 @@ async function submitRun(){
     console.log( "submitting: " + url )
     try{
         const data = await sendParams( uid, url );
-        console.log( "submitRun; got data %o ", data );
-        // updater is a global variable
-        updater = await createUpdater( uid, rid );
+        console.log( "submitRun; after sendParams got data as %o", data );
+        if( data.output_is_cached ){
+            await drawHeadlines( uid );
+            await getOutput( uid );
+        } else {
+            console.log( "submitRun; got data %o ", data );
+            // updater is a global variable defined in progress-bar.js
+            updater = await createUpdater( uid, rid );
+        }
     } catch(e) {
         console.error(e);
     }

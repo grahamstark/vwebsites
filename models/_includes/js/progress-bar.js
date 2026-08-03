@@ -1,3 +1,9 @@
+/**
+ *
+ * Code to create a progress bar from microapi's monitor calls,
+ * using JQuery PeriodicalUpdater and Bootstrap progress class.
+ *
+ */
 
 var updater;
 
@@ -11,15 +17,18 @@ function makeProgressBars( progress ){
         if((p.phase == 'run')&&(p.thread_no >=0)){
             console.log( "p.completed=" + p.completed + "p.todo=" + p.todo );
             const pct = Math.trunc(100 * p.completed / p.todo );
-            prog += "<div class='progress'>"+
-                "<div class='progress-bar " + colour +" progress-bar-animated progress-bar-striped' role='progressbar' "+
-                "aria-valuenow='" + pct + "' " +
-                "style='width: "+pct+"%' " +
-                "aria-valuemin='0' " +
-                "aria-valuemax='100'>"+
-                "thread: " + p.thread_no + " completed: " + pct + "%" +
-                "</div> "+
-                "</div><br/>";
+            prog +=
+                "<div class='progress'>";
+                if(progress.length > 1){
+                    prog += "thread: " + p.thread_no + " : "
+                }
+                prog += "<div class='progress-bar " + colour +" progress-bar-animated progress-bar-striped' role='progressbar' "+
+                    "aria-valuenow='" + pct + "' " +
+                    "style='width: "+pct+"%' " +
+                    "aria-valuemin='0' " +
+                    "aria-valuemax='100'>"+
+                    " completed: " + pct + "%" +
+                    "</div></div><br/>";
         }
     }
     console.log( "made progress bar as " + prog )
@@ -27,15 +36,17 @@ function makeProgressBars( progress ){
 }
 
 function updateProgress( progress ){
-    console.log( " isarray " + Array.isArray( progress ));
+    console.log( " isarray " + Array.isArray( progress ) + " length  " + progress.length );
     var phase = '';
     switch(progress.length){
         case 0:
             return;
         case 1:
             phase = progress[0].phase;
+            break;
         default:
             phase = 'run'
+            break;
     }
     console.log( "updateSTB  result.phase = " + phase );
     switch( phase ){
@@ -77,29 +88,6 @@ function updateProgress( progress ){
     }
 }
 
-/*
-user_id bigint not null,
-model_name char(20) not null default 'scotben',
-model_edition char(40) not null default 'simple-2026a',
-run_id integer not null,
-thread_no int default 1,
-phase text not null,
-completed integer default 0,
-todo integer,
-timer timestamp,
-
-
-('E', 'Editing'),
-('L', 'Locked'),
-('Q', 'Queued/Submitted'),
-('X', 'Executing'),
-('C', 'Completed'),
-('D', 'Displayed'),
-('Z', 'Errored');
-
-
-*/
-
 function createUpdater( uid, rid ){
     const url = [API,"run","monitor",MODEL,EDITION].join("/") + "?uid="+uid+"&rid="+rid;
     console.log( "createUpdater; url='%o'", url );
@@ -119,28 +107,27 @@ function createUpdater( uid, rid ){
         runatonce: true, // Whether to fire initially or wait
         verbose: 0        // The level to be logging at: 0 = none; 1 = some; 2 = all
         }, async function( responseFromUpdater, success, xhr, handle) {
-        console.log( "progress: got %o", responseFromUpdater );
-        console.log( responseFromUpdater.qstatus )
-        switch( responseFromUpdater.qstatus ){
-            case 'D':
-                $("#progress-indicator").html( "<div></div>" );
-                console.log( "main; loading output" );
-                // await populateForm( params, defaults );
-                await drawHeadlines( responseFromUpdater.uid );
-                await getOutput( responseFromUpdater.uid );
-                updater.stop();
-                break;
-            case 'X':
-            case 'Q':
-                updateProgress(  responseFromUpdater.progress );
-                break;
-
-            case 'please_stop':
-                updater.stop();
-            case 'no_progress':
-                ;
-                break;
-        }
+            console.log( "progress: got %o", responseFromUpdater );
+            console.log( responseFromUpdater.qstatus )
+            switch( responseFromUpdater.qstatus ){
+                case 'D':
+                    $("#progress-indicator").html( "<div></div>" );
+                    console.log( "main; loading output" );
+                    // await populateForm( params, defaults );
+                    await drawHeadlines( responseFromUpdater.uid );
+                    await getOutput( responseFromUpdater.uid );
+                    updater.stop();
+                    break;
+                case 'X':
+                case 'Q':
+                    updateProgress( responseFromUpdater.progress );
+                    break;
+                case 'please_stop':
+                    updater.stop();
+                case 'no_progress':
+                    ;
+                    break;
+            }
     });
 }
 
