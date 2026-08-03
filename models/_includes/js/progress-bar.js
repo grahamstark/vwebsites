@@ -54,6 +54,7 @@ function updateProgress( progress ){
         case 'queued':
             $("#progress-indicator").html( "<div class='alert alert-info' role='alert'>Run is in the job queue waiting to start.</div>");
             break;
+        case 'do-one-run-start':
         case 'start-pre':
             $("#progress-indicator").html( "<div class='alert alert-info' role='alert'>Run starting: starting pre-run routines.</div>");
             break;
