@@ -28,7 +28,7 @@ function summaryHeadline( val, direction, glclass ){
 
 function overallHeadline( text, val, direction, glclass ){
     const arrow = ARROWS_2[direction];
-    return `<div class='align-baseline border-bottom fs-3'>${text}<span class='${glclass}'><i class="bi ${arrow}"></i>&nbsp;${val}</span></div>`;
+    return `<div class='align-baseline border-bottom fs-3'>${text}&nbsp;<span class='${glclass}'><i class="bi ${arrow}"></i>&nbsp;${val}</span></div>`;
 }
 
 

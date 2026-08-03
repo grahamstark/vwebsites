@@ -36,7 +36,7 @@ async function drawHeadlines( uid ){
         console.log( " headlines.tax" + JSON.stringify( headlines.tax ));
         console.log( " headlines.net_cost %o", headlines.net_cost );
         $('#headlines-net-direct').html(overallHeadline(
-            "Change in Government Revenues From Your Changes:",
+            "Government Finances Change By:",
             headlines.net_cost.unsigned_num_str,
             headlines.net_cost.arrow,
             headlines.net_cost.glclass ));
