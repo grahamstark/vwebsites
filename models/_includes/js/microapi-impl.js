@@ -34,11 +34,12 @@ async function drawHeadlines( uid ){
         $('#headlines-losers').text(headlines.losers);
         $('#headlines-nochange').text(headlines.no_change);
         console.log( " headlines.tax" + JSON.stringify( headlines.tax ));
-        console.log( " headlines.pov_headcount" + JSON.stringify( headlines.pov_headcount ));
-        $('#headlines-net-direct').html(summaryHeadline(
-            headlines.net_direct.unsigned_num_str,
-            headlines.net_direct.arrow,
-            headlines.net_direct.glclass ));
+        console.log( " headlines.net_cost %o", headlines.net_cost );
+        $('#headlines-net-direct').html(overallHeadline(
+            "Change in Government Revenues From Your Changes:",
+            headlines.net_cost.unsigned_num_str,
+            headlines.net_cost.arrow,
+            headlines.net_cost.glclass ));
         $('#headlines-tax').html(summaryHeadline(
             headlines.tax.unsigned_change_str,
             headlines.tax.arrow,
@@ -118,7 +119,9 @@ async function initialise(){
                 uid = data.uid;
                 setUID( uid );
             }
-            defaults = structuredClone(data.params);
+            // see: https://stackoverflow.com/questions/728360/how-do-i-correctly-clone-a-javascript-object
+            // defaults is a global
+            defaults = JSON.parse(JSON.stringify(data.params));
             populateForm( data.params, defaults );
 
     });

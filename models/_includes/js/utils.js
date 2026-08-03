@@ -26,6 +26,12 @@ function summaryHeadline( val, direction, glclass ){
     return `<span class='${glclass} align-middle'><i class="bi ${arrow}"></i>&nbsp;${val}</span>`;
 }
 
+function overallHeadline( text, val, direction, glclass ){
+    const arrow = ARROWS_2[direction];
+    return `<div class='align-baseline border-bottom fs-3'>${text}<span class='${glclass}'><i class="bi ${arrow}"></i>&nbsp;${val}</span></div>`;
+}
+
+
 function makeInput( n, name, type ){
     var typename = makeTypename( type );
     var min=-BIG_A;
