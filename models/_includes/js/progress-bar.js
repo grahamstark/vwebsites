@@ -5,6 +5,7 @@
  *
  */
 
+// updater as a global variable.
 var updater;
 
 function makeProgressBars( progress ){
@@ -83,7 +84,7 @@ function updateProgress( progress ){
             // updater.stop();
             break;
         default:
-            $("#progress-indicator").html( "<div class='alert alert-danger' role='alert'>Problem: unknown run phase "+p0.phase+".</div>");
+            $("#progress-indicator").html( "<div class='alert alert-danger' role='alert'>Phase: "+phase+".</div>");
             break;
     }
 }
