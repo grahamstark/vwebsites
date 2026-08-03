@@ -132,7 +132,7 @@ function createUpdater( uid, rid ){
                 break;
             case 'X':
             case 'Q':
-                updateProgress( responseFromUpdater.progress );
+                updateProgress(  responseFromUpdater.progress );
                 break;
 
             case 'please_stop':
