@@ -88,6 +88,7 @@ async function submitRun(){
         } else {
             console.log( "submitRun; got data %o ", data );
             // updater is a global variable defined in progress-bar.js
+            deactivate_popups();
             updater = await createUpdater( uid, rid );
         }
     } catch(e) {

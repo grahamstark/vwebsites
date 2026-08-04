@@ -22,32 +22,34 @@
 
 {% include progress-block.html %}
 
-<header role='header' class='box justify-content-center'>
-    <h2>Results At A Glance</h2>
-</header>
+<div id='output-wrapper'>
+    <header role='header' class='box justify-content-center'>
+        <h2>Results At A Glance</h2>
+    </header>
 
 
-<div class='row'>
-    <div class='col-3'></div>
-    <div class='col-6 pt-3 pb-3 text-center alert alert-info' role='alert' id='headlines-net-direct'></div>
-    <div class='col-3'></div>
-</div>
+    <div class='row'>
+        <div class='col-3'></div>
+        <div class='col-6 pt-3 pb-3 text-center alert alert-info' role='alert' id='headlines-net-direct'></div>
+        <div class='col-3'></div>
+    </div>
 
-<div class='row fs-5 justify-content-center text-primary pt-3 pb-3'>
+    <div class='row fs-5 justify-content-center text-primary pt-3 pb-3'>
 
-{% include default-output.html which='gainlose' %}
-{% include default-output.html which='costs' %}
-{% include default-output.html which='metrs' %}
+    {% include default-output.html which='gainlose' %}
+    {% include default-output.html which='costs' %}
+    {% include default-output.html which='metrs' %}
 
-</div>
+    </div>
 
-<div class='row fs-5 justify-content-center text-primary pt-3 pb-3'>
+    <div class='row fs-5 justify-content-center text-primary pt-3 pb-3'>
 
-{% include default-output.html which='poverty' %}
-{% include default-output.html which='inequality' %}
-{% include default-output.html which='income' %}
+    {% include default-output.html which='poverty' %}
+    {% include default-output.html which='inequality' %}
+    {% include default-output.html which='income' %}
 
-</div>
+    </div>
+</div><!-- output-wrapper -->
 
 {% include modal-popups.html which='gainlose' %}
 {% include modal-popups.html which='costs' %}

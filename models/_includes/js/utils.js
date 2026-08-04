@@ -129,3 +129,16 @@ async function getOutputItem( uid, item, datatype ){
             }
         });
 }
+
+function deactivate_popups(){
+    console.log( "untoggling popups");
+    $( '.summaries' ).removeAttr( 'data-bs-toggle');
+    $( '#output-wrapper' ).addClass( 'bg-secondary' );
+}
+
+function activate_popups(){
+    console.log( "toggling popups");
+    $( '.summaries' ).attr( 'data-bs-toggle', 'modal');
+    $( '#output-wrapper' ).removeClass( 'bg-secondary');
+}
+

@@ -119,6 +119,7 @@ function createUpdater( uid, rid ){
                     await drawHeadlines( responseFromUpdater.uid );
                     await getOutput( responseFromUpdater.uid );
                     updater.stop();
+                    activate_popups();
                     break;
                 case 'X':
                 case 'Q':
