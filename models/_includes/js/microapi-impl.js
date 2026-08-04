@@ -80,6 +80,8 @@ async function drawHeadlines( uid ){
             headlines.median_income.unsigned_change_str,
             headlines.median_income.arrow,
             headlines.median_income.glcolours[0]  ));
+    const fpurl = [API,"output","fetch",MODEL,EDITION,'zip','phunpack'].join("/")+"?uid="+uid
+    $('#phunpack').attr('href', fpurl );
     });
 }
 
