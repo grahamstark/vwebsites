@@ -4,7 +4,7 @@
         data-bs-toggle='modal'
         data-bs-target='#gainlose-popup'>
 
-        <h3>Gainers and Losers</h3>
+        <h3>{{site.data.definitions.gainlose.title}}</h3>
         <table class='table table-sm align-middle'>
             <tr>
                 <th>Gaining:</th><td class='text-success' id='headlines-gainers'></td>
@@ -16,7 +16,9 @@
                 <th>Unchanged:</th><td class='' id='headlines-nochange'></td>
             </tr>
         </table>
-        <p class='text-info fs-6'>These are counts of people living in households whose net income has increased, decreased, or stayed the same.</p>
+        <div class='text-info fs-6'>
+        {{site.data.definitions.gainlose.summary | markdownify}}
+        </div>
     </div>
 
 {% elsif include.which == 'costs' %}
