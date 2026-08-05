@@ -1,12 +1,54 @@
 gainlose:
-  title: Gainers and Losers
-  summary: This panel shoes how many Scottish people gain at least £1 per week as a result of your changes, and how many lose at least £1, and how many are unaffected [this is a link](http://link.com).
-  url: http://www.virtual-worlds.scot/graham_s/
-  full: These are counts of people living in households whose net income has increased by at least £1, decreased by , or stayed the same.
+  title: Tables of Gainers and Losers
+  summary: This panel shows how many Scottish people gain at least £1 per week as a result of your changes, how many lose at least £1, and how many are unaffected.
+  full: In the left hand columns of these tables are counts of people living in households whose net income has increased or decreased by different amounts. On the RHS of the tables are columns showing - total population in each group; Average Change in £s pw; Percentage Change in net income; and The total transfer to or from this subgroup, in £m p.a. These tables, and the inequality and poverty measures in other panels use [Equivalised Before-Housing Costs Income](https://www.gov.uk/government/statistics/households-below-average-income-for-financial-years-ending-1995-to-2025/households-below-average-income-background-information-and-methodology-report-fye-2025).
 
 deciles:
   title: Gains by Income Decile
-  summary: Counts of people ...
-  url: http://www.virtual-worlds.scot/graham_s/
-  full: Graham is ...
+  summary: This graph divides the population into the poorest 10$, the next 10% and so on up to the richest 10% and shows the average gains in £s pw for each group.
+  full:
 
+costs:
+   title: Revenues, Caseloads and Costs
+   summary: These are our estimates of the net costs to the Government of your changes, in £s p.a.
+   full: These are our estimates of the annual costs and caseloads for each benefit we model, and revenues and numbers paying each tax. Note that these are modelled benefit entitlements and tax liabilities - we don't currently correct for non-takeup of benefits, tax avoidance, or lags in payment. We're showing a costs summary at the top of the popup, and a fuller table at the bottom.
+
+sfc:
+   title: SFC Income Tax Correction
+   summary:
+   full:
+
+taxable_graph:
+    title:
+    summary:
+    full:
+
+metrs:
+    title:
+    summary:
+    full:
+
+metrs_transitions:
+    title:
+    summary:
+    full:
+
+poverty:
+    title:
+    summary:
+    full:
+
+poverty_transitions:
+    title:
+    summary:
+    full:
+
+inequality:
+    title:
+    summary:
+    full:
+
+incomes:
+    title:
+    summary:
+    full:
