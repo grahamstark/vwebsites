@@ -133,14 +133,14 @@ async function getOutputItem( uid, item, datatype ){
 function deactivate_popups(){
     console.log( "untoggling popups");
     $( '.summaries' ).removeAttr( 'data-bs-toggle');
-    $( '#output-wrapper' ).addClass( 'text-muted' );
-    $( '#output-wrapper' ).removeClass( 'hover-highlight');
+    $( '#output-wrapper' ).addClass( 'greyed-summaries' );
+    $( '.summaries' ).removeClass( 'hover-highlight');
 }
 
 function activate_popups(){
     console.log( "toggling popups");
     $( '.summaries' ).attr( 'data-bs-toggle', 'modal');
-    $( '#output-wrapper' ).removeClass( 'text-muted`');
-    $( '#output-wrapper' ).addClass( 'hover-highlight');
+    $( '#output-wrapper' ).removeClass( 'greyed-summaries');
+    $( '.summaries' ).addClass( 'hover-highlight');
 }
 
