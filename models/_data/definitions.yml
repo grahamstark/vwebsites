@@ -34,8 +34,8 @@ metrs_transitions:
     full:
 
 poverty:
-    title:
-    summary:
+    title: Measures of Poverty
+    summary: The headline poverty rate is the percentage of the Scottish population that live in households with income below 60% of the median. The Child Poverty rate is the percentage of children in such households.
     full:
 
 poverty_transitions:
