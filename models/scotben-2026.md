@@ -8,6 +8,6 @@ category: Scotland
 whichapi: http://microapi-local/
 ---
 
-## Scotben 2026
+## Scotben 2026 Edition
 
-This is ...
+This is a front-end to a [ScotBen](), a microsimulation model of Scotland. You are the [Cabinet Secretary for Finance](https://www.gov.scot/about/who-runs-government/cabinet-and-ministers/deputy-first-minister/).

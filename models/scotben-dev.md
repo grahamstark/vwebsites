@@ -8,11 +8,14 @@ category: Scotland
 whichapi: http://microapi-dev/
 ---
 
-This is the development version, using {{page.whichapi}}.
+
+This is a front-end to a [ScotBen](), a microsimulation model of Scotland. You are the [Cabinet Secretary for Finance](https://www.gov.scot/about/who-runs-government/cabinet-and-ministers/deputy-first-minister/).
+
+### Dev References
 
 * [ScotBen](https://github.com/grahamstark/ScottishTaxBenefitModel.jl);
 * [MicrosimAPI, V1](https://github.com/grahamstark/MicrosimAPIv1);
-* [API Spec In Swagger Format]({{page.whichapi}}/docs/);
+* [API Spec In Swagger Format](http://microapi-dev/docs/);
 * [Draft Documentation](/docs/microsimapi-v1.pdf);
 * [TODO/buglist](https://docs.google.com/spreadsheets/d/1QjX--iOkHQtdsO-fS5X9O85z4cnTJXFBpkJKLeAoC7s/edit?usp=sharing);
 
