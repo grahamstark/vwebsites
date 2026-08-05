@@ -10,11 +10,11 @@ deciles:
 
 costs:
    title: Revenues, Caseloads and Costs
-   summary: These are our estimates of the net costs to the Government of your changes, in £s p.a.
+   summary: These are our estimates of the costs to the Government of your changes, in £s p.a.
    full: These are our estimates of the annual costs and caseloads for each benefit we model, and revenues and numbers paying each tax. Note that these are modelled benefit entitlements and tax liabilities - we don't currently correct for non-takeup of benefits, tax avoidance, or lags in payment. We're showing a costs summary at the top of the popup, and a fuller table at the bottom.
 
 sfc:
-   title: SFC Income Tax Correction
+   title: SFC Income Tax Corrections
    summary:
    full:
 
@@ -24,13 +24,13 @@ taxable_graph:
     full:
 
 metrs:
-    title:
-    summary:
-    full:
+    title: Incentives To Work - Marginal Effective Tax Rates (METRs)
+    summary: The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away.
+    full: The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away. If you pay income tax at 21%, and no other tax, then your METR is 21%. However, many people pay both income tax and National Insurance, and many of those
 
 metrs_transitions:
     title:
-    summary:
+    summary: This shows how the METRS of working-age people change as a result of your changes,
     full:
 
 poverty:
