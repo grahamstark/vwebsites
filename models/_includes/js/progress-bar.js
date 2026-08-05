@@ -74,6 +74,7 @@ function updateProgress( progress ){
             makeProgressBars( progress );
             break;
         case 'do-one-run-end':
+        case 'completed':
             $("#progress-indicator").html( "<div class='alert alert-info' role='alert'>End of main calculations.</div>");
             break;
         case 'results-generation':
