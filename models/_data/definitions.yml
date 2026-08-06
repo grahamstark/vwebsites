@@ -15,21 +15,25 @@ costs:
 
 sfc:
    title: SFC Income Tax Corrections
-   summary:
-   full:
+   summary: This table is our reproduction of a standard approach to estimating how changes to income tax rates and bands might not raise as much mnoney as first appears because people might change their behaviour in response. There is a lot of uncertainty and conroversy around this subject, so we're including this table for completeness rather than because we fully endorse it.
+   full: The costings we show in this panel assume people pay all the taxes they appear to be liable for, and don't change their behaviour when taxes change. There is a [large, but contentious academic literature on this subject](). The [Scottish Fiscal Commission]() (SFC) published a report showing how estimates of Scottish Income Tax revenues can be adjusted to allow for behavioural changes using results suggested by a [study by HMRC](). This table shows our reproduction of SFC's methods for your changes. We include this for completeness; it doesn't mean that we fully endorse SFC's methodology or [the polemic that currently surrounds it]().
+   note: Please refer to the SFC study, particularly [the workbook]() for more detail.
 
 taxable_graph:
-    title:
-    summary:
-    full:
+    title: Taxable Income and Tax Rates
+    summary: This graph charts our esimates of Scottish Taxable Income, in £10 bands, charted against the marginal income tax rates applying at each band.
+    full: The taxable income bars will change if you change the tax-free allowance, but otherwise we're not assuming any behavioural changes as tax rates and bands change - see the SFC table for those.
+    note: We're graphing the income taxed in Scotland only here; income from savings and dividends is taxed by the UK Government and so isn't included here.
 
 metrs:
     title: Incentives To Work - Marginal Effective Tax Rates (METRs)
     summary: The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away.
-    full: The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away. If you pay income tax at 21%, and no other tax, then your METR is 21%. However, many people pay both income tax and National Insurance, and many of those
+    full: The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away. If you pay income tax at 21%, and no other tax, then your METR is 21%. However, many people pay both income tax and National Insurance, and many of those will also be on income-related benefits such as Universal Credit - the METRs for those people will be a combination of all the tax rates and the benefit withdrawal rates, and this can be very high, sometimes over 100%.
+    note: we canculate METRs here only for the working-age populatio (assumed 16-67), including students and the sick and disabled. For people who are not currently working we work out what their METR would be if they were to earn just 1p - usually (but not always) this METR is 0. Some people on benefits may face 'cliff edges' where earning an extra small amount means they lose many £s of benefits - effectively an infinite METR - the results here limit such METRs to 100%. Can vary ..  [simulation exploring complete budget constrai]().
+    code: http://github.com/grahamstark/
 
 metrs_transitions:
-    title:
+    title: A rather confusing table showing
     summary: This shows how the METRS of working-age people change as a result of your changes,
     full:
 
