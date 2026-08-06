@@ -1,0 +1,34 @@
+
+<div id='infoblock-{{include.id}}' class='p-4'>
+
+{% if include.data.title %}
+    <header class=''>
+        <h4>{{include.data.title}}</h4>
+    </header>
+{% endif %}
+    
+{% if include.data.summary %} 
+    <div class='text-success'>
+    {{include.data.summary | markdownify}}
+    </div>
+{% endif %}
+    
+{% if include.data.full %} 
+    <div class='text-info small'>
+    {{include.data.full | markdownify}}
+    </div>
+{% endif %}
+    
+{% if include.data.notes %} 
+    <div class='text-info text-muted'>
+    <span class=''>Notes</span> {{include.data.notes | markdownify}}
+    </div>
+{% endif %}
+    
+{% if include.data.code %} 
+    <div class='text-info text-muted'>
+        <span class=''>Source Code:</span> <a href='{{include.data.code}}'>{{include.data.code}}</a>
+    </div>
+{% endif %}
+
+</div>

@@ -3,7 +3,6 @@ All the modal popups in one file - pick one ...
 {% endcomment %}
 
 {% if include.which == 'gainlose' %}
-
 <!-- popups: 1) gain lose -->
 <div class='modal fade' id='gainlose-popup' tabindex='-1' role='dialog' aria-labelledby='crosstab-label' aria-hidden='true'>
     <div class='modal-content modal-dialog modal-xl'  role='document'>
@@ -15,13 +14,11 @@ All the modal popups in one file - pick one ...
         <div id='gain-lose-summary'></div>
         <h4>{{site.data.definitions.decile.title}}</h4>
 
-        {% include svg-figure.html size="std" id="deciles" caption="This graph divides the population into the poorest 10$, the next 10% and so on up to the richest 10% and shows the average gains in £s pw for each group." %}
+        {% include svg-figure.html size="std" id="deciles" caption=site.data.definitions.deciles.summary %}
 
         <div class='text-info fs-6'>{{site.data.definitions.decile.summary | markdownify}}</div>
 
-        <h4>{{site.data.definitions.gainlose.title}}</h4>
-
-        <div class='text-info fs-6'>{{ site.data.definitions.gainlose.full | markdownify }}</div>
+        {% include infoblock.html id='gainlose' data=site.data.definitions.gainlose %}
 
         {% include table-figure.html id='children_gl' caption="Counts of Gainers and Losers By Number of Children" %}
         {% include table-figure.html id='hhtype_gl' caption="Counts of Gainers and Losers By Household Size" %}
@@ -42,9 +39,16 @@ All the modal popups in one file - pick one ...
         </div>
         <div class='modal-body'>
                 <h4>Costs Summary</h4>
+
+                {% include infoblock.html id='costs' data=site.data.definitions.costs %}
+
                 {% include table-figure.html id='costs_table' caption="Costs/Revenues in £m p.a.; counts of recipients/payers in 000s" %}
 
+                {% include infoblock.html id='taxable_graph' data=site.data.definitions.taxable_graph %}
+
                 {% include svg-figure.html size="long" id="taxable_graph" caption="Taxable Incomes, in £10 bands, against Marginal Income Tax Rates." %}
+
+                {% include infoblock.html id='sfc' data=site.data.definitions.sfc %}
 
                 <h4>SFC Behavioural Corrections</h4>
                 {% include table-figure.html id='sfc' caption="Income Tax Behavioural Corrections based on <a href=''>paper by Scottish Fiscal Commission</a>." %}
@@ -65,14 +69,14 @@ All the modal popups in one file - pick one ...
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class='modal-body'>
-            <p class='text-info fs-6'>
-                The Marginal Effective Tax Rate (METR) is the percentage of the next £1 you earn that is taken away in direct taxes and
-                reduced income-related benefits. A METR of 0 means you keep all of the next £1, while 100% means it's all taken away.
-            </p>
+
+            {% include infoblock.html id='metrs' data=site.data.definitions.metrs %}
+
             {% include svg-figure.html size="std" id="metrs2" caption="Histogram of Marginal Effective Tax Rates, pre- and post-. <a href=''>More Information</a>" %}
 
-            <h4>Marginal Effective Tax Rates - Transitions</h4>
-            <div style='scale:85%'> <!-- hack - shrink to fit this big table -->
+            {% include infoblock.html id='metrs_transitions' data=site.data.definitions.metrs_transitions %}
+
+            <div style='scale:80%'> <!-- hack - shrink to fit this big table -->
             {% include table-figure.html id='metrs_transitions' caption="This shows how the METRS of working-age people change as a result of your changes," %}
             </div>
         </div> <!-- modal body -->
@@ -88,10 +92,15 @@ All the modal popups in one file - pick one ...
             <h3  class='modal-title' >Poverty</h3>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class='modal-body'>
-                <h4>Summary</h4>
+
+            {% include infoblock.html id='poverty' data=site.data.definitions.poverty %}
+
             {% include table-figure.html id='poverty_summary' caption="" %}
-                <h4>Transitions</h4>
+
+            {% include infoblock.html id='poverty_transitions' data=site.data.definitions.poverty_transitions %}
+
             {% include table-figure.html id='poverty_transitions' caption="" %}
         </div> <!-- modal body -->
     </div> <!-- model content -->
@@ -107,8 +116,13 @@ All the modal popups in one file - pick one ...
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class='modal-body'>
+
+        {% include infoblock.html id='lorenz' data=site.data.definitions.lorenz %}
+
         {% include svg-figure.html size="std" id="lorenz_curve" caption="Standard Curve showing the share of income against share of population; <a href=''>More Information</a>." %}
-        <h4>Inequality Measures</h4>
+
+        {% include infoblock.html id='inequality' data=site.data.definitions.inequality %}
+
         {% include table-figure.html id='inequality_summary' caption="" %}
         </div> <!-- modal body -->
     </div> <!-- model content -->
@@ -124,7 +138,9 @@ All the modal popups in one file - pick one ...
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class='modal-body'>
-        {% include svg-figure.html size="long" id="hbai" caption="Reproduction of the standard HBAI Income Distribution graph. <a href=''>More Information</a>." %}
+
+        {% include infoblock.html id='income' data=site.data.definitions.income %}
+        {% include svg-figure.html size="long" id="hbai" caption="Reproduction of the standard HBAI Income Distribution graph." %}
         </div> <!-- modal body -->
     </div> <!-- model content -->
 </div><!-- hidden div -->

@@ -5,7 +5,7 @@ gainlose:
 
 deciles:
   title: Gains by Income Decile
-  summary: This graph divides the population into the poorest 10$, the next 10% and so on up to the richest 10% and shows the average gains in £s pw for each group.
+  summary: This graph divides the population into the poorest 10%, the next poorest 10% and so on up to the richest 10%, and shows the average gains in £s pw for each group.
   full:
 
 costs:
@@ -33,26 +33,32 @@ metrs:
     code: http://github.com/grahamstark/
 
 metrs_transitions:
-    title: A rather confusing table showing
-    summary: This shows how the METRS of working-age people change as a result of your changes,
+    title: METRs Transitions
+    summary: This shows how the METRS of working-age people change as a result of your changes.
     full:
 
 poverty:
     title: Measures of Poverty
     summary: The headline poverty rate is the percentage of the Scottish population that live in households with income below 60% of the median. The Child Poverty rate is the percentage of children in such households.
-    full:
+    full: Since 1991 the official poverty line for the UK has been defined 60% of median equivalised household income. This is the [Households Below Average Income (HBAI) measure](). The model reports headcounts (numbers below the poverty line) and also several other proposed measures - see
+    note: See [The HBAI Handbook](http://research.dwp.gov.uk/asd/frs/) for more on the measure of income. See the [World Bank Handbook on poverty and inequality](http://documents.worldbank.org/curated/en/488081468157174849/Handbook-on-poverty-and-inequality) for details of the various poverty measures.
 
 poverty_transitions:
-    title:
-    summary:
-    full:
+    title: Transitions in and out of Poverty
+    summary: This table shows how your changes move people in and out of poverty.
+    full: We use the standard poverty measure based on median household income (see above). The position before your changes is in the rows, and after your changes are in the columns. So the top row shows everyone in very deep poverty (less than 30% of median income) before your changes, and the first column is the numbers in severe poverty after your changes. The red columns below the diagonal are counts of people whose poverty state has worsened, for example from mild poverty (3rd row) to deep poverty (2nd row). Likewise movements into the green areas above the diagonal show the numbers who are improving as a result of your changes.
 
 inequality:
+    title: Measures of inequality
+    summary:
+    full:
+
+lorenz:
     title:
     summary:
     full:
 
-incomes:
+income:
     title:
     summary:
     full:
