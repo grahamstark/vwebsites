@@ -19,9 +19,9 @@
     </div>
 {% endif %}
     
-{% if include.data.notes %} 
-    <div class='text-info text-muted'>
-    <span class=''>Notes</span> {{include.data.notes | markdownify}}
+{% if include.data.note %}
+    <div class='text-info text-muted small'>
+    {{include.data.note | markdownify}}
     </div>
 {% endif %}
     
