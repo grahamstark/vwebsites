@@ -147,6 +147,14 @@ async function initialise(){
             toggleSubmitButtons( hasErrors, false );
         }
     }); // jquery validation
+
+    // popup initialisation; see: https://getbootstrap.com/docs/5.0/components/popovers/
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+
     await drawHeadlines( uid );
     await getOutput( uid );
 }
