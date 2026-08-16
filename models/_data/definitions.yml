@@ -39,8 +39,8 @@ metrs_transitions:
 poverty:
     title: Measures of Poverty
     summary: The headline poverty rate is the percentage of the Scottish population that live in households with income below 60% of the median. The Child Poverty rate is the percentage of children in such households.
-    full: Poverty in this context is about how many people fall below some minimum standard. Since 1991 the official poverty line for the UK has been defined 60% of median equivalised household income. This is the [Households Below Average Income (HBAI) measure](){:target="_blank"}. The model reports headcounts (numbers below the poverty line) and also calculates several other measures; headcounts can be misleading since people below the poverty line all count for the same regardless of whether they are far below the poverty line, or only just below it. The Poverty Gap, Foster-Greer-Thorndyke, Shorrocks and Sen measures all give extra weight to extremely poor people.
-    note: Since the changes you make can alter median incomes. That can make poverty changes hard to interpret, so here we always use median income from he base 'no change' system; this is *absolute* rather than *relative* poverty. See [The HBAI Handbook](http://research.dwp.gov.uk/asd/frs/){:target="_blank"} for more on the measure of income. See the [World Bank Handbook on poverty and inequality](http://documents.worldbank.org/curated/en/488081468157174849/Handbook-on-poverty-and-inequality){:target="_blank"} for details of the various poverty measures.
+    full: Poverty in this context is about how many people fall below some minimum standard. Since 1991 the official poverty line for the UK has been defined 60% of median equivalised household income. This is the [Households Below Average Income (HBAI) measure](){:target="_blank"}. The model reports headcounts (numbers below the poverty line) and also calculates several other measures; headcounts can be misleading since people below the poverty line all count for the same regardless of whether they are far below the poverty line, or only just below it. The Poverty Gap, Poverty Severity, Shorrocks and Sen measures all give extra weight to extremely poor people.
+    note: The changes you make can alter median incomes. That can make poverty changes hard to interpret, so here we always use median income from the base 'no change' system; this is *absolute* rather than *relative* poverty. See [The HBAI Handbook](http://research.dwp.gov.uk/asd/frs/){:target="_blank"} for more on the measure of income. See the [World Bank Handbook on poverty and inequality](http://documents.worldbank.org/curated/en/488081468157174849/Handbook-on-poverty-and-inequality){:target="_blank"} for details of the various poverty measures.
 
 poverty_transitions:
     title: Transitions in and out of Poverty
@@ -49,7 +49,7 @@ poverty_transitions:
 
 inequality:
     title: Measures of inequality
-    summary:
+    summary: Inequality
     full:
 
 lorenz:
