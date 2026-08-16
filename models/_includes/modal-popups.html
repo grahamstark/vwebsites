@@ -72,6 +72,18 @@ All the modal popups in one file - pick one ...
 
             {% include infoblock.html id='metrs' data=site.data.definitions.metrs %}
 
+
+        <table class='table table-sm'>
+            <thead>
+            <caption>Mean and median marginal effective tax rates (METRs)</caption>
+            </thead>
+            <tbody>
+            <tr><th></th><th>Before</th><th>After</th><th>Change</th></tr>
+            <tr><th>Median :</th><td id='median-metrs-pre'></td><td id='median-metrs-post'></td><td id='median-metrs-change'></td></tr>
+            <tr><th>Mean:</th><td id='mean-metrs-pre'></td><td id='mean-metrs-post'></td><td id='mean-metrs-change'></td></tr>
+            </tbody>
+        </table>
+
             {% include svg-figure.html size="std" id="metrs2" caption="Histogram of Marginal Effective Tax Rates, pre- and post- your chhanges." %}
 
             {% include infoblock.html id='metrs_transitions' data=site.data.definitions.metrs_transitions %}

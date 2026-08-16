@@ -33,6 +33,7 @@ async function drawHeadlines( uid ){
         $('#headlines-gainers').text(headlines.gainers);
         $('#headlines-losers').text(headlines.losers);
         $('#headlines-nochange').text(headlines.no_change);
+
         console.log( " headlines.tax" + JSON.stringify( headlines.tax ));
         console.log( " headlines.net_cost %o", headlines.net_cost );
         $('#headlines-net-direct').html(overallHeadline(
@@ -56,6 +57,14 @@ async function drawHeadlines( uid ){
             headlines.median_metrs.unsigned_change_str,
             headlines.median_metrs.arrow,
             headlines.median_metrs.glcolours[0]  ));
+        // in the popups, not the headlines, but still ....
+        $('#median-metrs-pre').html(headlines.median_metrs.pre_str);
+        $('#median-metrs-post').html(headlines.median_metrs.post_str);
+        $('#median-metrs-change').html(headlines.median_metrs.change_str);
+        $('#mean-metrs-pre').html(headlines.mean_metrs.pre_str);
+        $('#mean-metrs-post').html(headlines.mean_metrs.post_str);
+        $('#mean-metrs-change').html(headlines.mean_metrs.change_str);
+
         $('#headlines-pov-headcount').html(summaryHeadline(
             headlines.pov_headcount.unsigned_change_str,
             headlines.pov_headcount.arrow,
