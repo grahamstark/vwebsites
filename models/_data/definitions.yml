@@ -21,9 +21,9 @@ sfc:
 
 taxable_graph:
     title: Taxable Income and Tax Rates
-    summary: This graph charts our estimates of Scottish Taxable Income, in £10 bands, charted against the marginal income tax rates applying at each band.
-    full: The taxable income bars will change if you change the tax-free allowance, but otherwise we're not assuming any behavioural changes as tax rates and bands change - see the SFC table for those.
-    note: We're graphing the income taxed in Scotland only here; income from savings and dividends is taxed by the UK Government and so isn't included here.
+    summary: This graph charts Scottish Taxable Income. The bars show how many taxpayers have a certain amount of taxabple income, in £10 bands. The line is the marginal income tax rates applying at each band.
+    full: The taxable income bars will change if you change the tax-free allowance, but otherwise we're not assuming any behavioural changes as tax rates and bands change - see the SFC table below for more on that.
+    note: We're graphing the income taxed in Scotland only here - chielfy wages, self-employment income, pension income and income from rents; savings income and dividends are taxed by the UK Government and so are't included here.
 
 metrs:
     title: Incentives To Work - Marginal Effective Tax Rates (METRs)
@@ -34,14 +34,13 @@ metrs:
 
 metrs_transitions:
     title: METRs Transitions
-    summary: This shows how the METRS of working-age people change as a result of your changes.
-    full:
+    summary: This shows how the METRS of working-age people change as a result of your changes. The position before your changes is in the rows, and after your changes are in the columns. So the top row shows everyone with a METRs of over 100% before your changes, so they *lose* income as their earnings increase. Likewise the 2nd column gives the numbers with exactly 100% after your changes - so they gain nothing from the next £1 they earn. The red columns below the diagonal are counts of people whose METR has worsened. Likewise movements into the green areas above the diagonal show the numbers whose METR improves as a result of your changes.
 
 poverty:
     title: Measures of Poverty
     summary: The headline poverty rate is the percentage of the Scottish population that live in households with income below 60% of the median. The Child Poverty rate is the percentage of children in such households.
-    full: Since 1991 the official poverty line for the UK has been defined 60% of median equivalised household income. This is the [Households Below Average Income (HBAI) measure](). The model reports headcounts (numbers below the poverty line) and also several other proposed measures - see
-    note: See [The HBAI Handbook](http://research.dwp.gov.uk/asd/frs/) for more on the measure of income. See the [World Bank Handbook on poverty and inequality](http://documents.worldbank.org/curated/en/488081468157174849/Handbook-on-poverty-and-inequality) for details of the various poverty measures.
+    full: Poverty in this context is about how many people fall below some minimum standard. Since 1991 the official poverty line for the UK has been defined 60% of median equivalised household income. This is the [Households Below Average Income (HBAI) measure](){:target="_blank"}. The model reports headcounts (numbers below the poverty line) and also calculates several other measures; headcounts can be misleading since people below the poverty line all count for the same regardless of whether they are far below the poverty line, or only just below it. The Poverty Gap, Foster-Greer-Thorndyke, Shorrocks and Sen measures all give extra weight to extremely poor people.
+    note: Since the changes you make can alter median incomes. That can make poverty changes hard to interpret, so here we always use median income from he base 'no change' system; this is *absolute* rather than *relative* poverty. See [The HBAI Handbook](http://research.dwp.gov.uk/asd/frs/){:target="_blank"} for more on the measure of income. See the [World Bank Handbook on poverty and inequality](http://documents.worldbank.org/curated/en/488081468157174849/Handbook-on-poverty-and-inequality){:target="_blank"} for details of the various poverty measures.
 
 poverty_transitions:
     title: Transitions in and out of Poverty
