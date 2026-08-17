@@ -64,24 +64,24 @@ income:
     note: Future versions of the model could allow you to switch between different measures of income, for example before- and after- housing costs, and with different (or no) measures of Equivalisation.
 
 income-tax:
-    title:
-    summary:
-    full:
+    title: Income Tax
+    summary: This is IT summary
+    full: This is full IT
 
 national-insurance:
-    title:
-    summary:
-    full:
+    title: National Insurance
+    summary: National Insurance is
+    full: National Insurance full
 
 scottish-benefits:
-    title:
-    summary:
-    full:
+    title: Scottish Benefits
+    summary: Scottish Benefits summary
+    full: Scottish Benefits full
 
 reserved-benefits:
-    title:
-    summary:
-    full:
+    title: Reserved Benefits
+    summary: Reserved Benefits summary
+    full: Reserved Benefits full
 
 about-scotben:
     title:

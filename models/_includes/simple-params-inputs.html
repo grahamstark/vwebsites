@@ -7,7 +7,7 @@
     <div class='container-fluid'>
         <div class='row'><!-- input row -->
             <fieldset class="col border rounded-2 m-1 p-2">
-                <legend>Income Tax</legend>
+               {% include help-popup.html id='income-tax' data=site.data.definitions.income-tax %}
                         <input type="hidden" id="tax-n" name="tax-n" value=""/>
                         <table id='it-table' class="table table-sm table-striped">
                             <caption>Rates in %, bands in &pound;s pa</caption>
@@ -28,7 +28,7 @@
                         </div>
             </fieldset>
             <fieldset class='col border rounded-2 m-1 p-2 ukreserved'>
-                <legend>National Insurance</legend>
+                {% include help-popup.html id='national-insurance' data=site.data.definitions.national-insurance %}
                 <input type="hidden" id="ni-n" name="ni-n" value=""/>
                 <table class="table table-sm table-striped">
                     <caption>Rates in %, bands in &pound;s pw</caption>
@@ -45,7 +45,7 @@
                 </table>
             </fieldset>
             <fieldset class='col border  rounded-2 m-1 p-2'>
-                <legend>Scottish Benefits</legend>
+                {% include help-popup.html id='scottish-benefits' data=site.data.definitions.scottish-benefits %}
                 <div class="row">
                     <div class="col">
                         <label for='scottish_child_payment' class='form-label'>Scottish Child Payment £pw</label>
@@ -60,7 +60,7 @@
                 </div>
             </fieldset>
             <fieldset class='col border rounded-2 m-1 p-2 ukreserved'>
-                    <legend>UK (Reserved) Benefits</legend>
+                    {% include help-popup.html id='reserved-benefits' data=site.data.definitions.reserved-benefits %}
                     <div class="row">
                         <div class="col">
                             <label for='uc_single' class='form-label'>Universal Credit: Single over 25 (£pm)</label>
