@@ -12,7 +12,7 @@ costs:
    title: Revenues, Caseloads and Costs
    summary: These are our estimates of the costs of your changes, in £s p.a.
    full: These are our estimates of the annual costs and caseloads for each benefit we model, and revenues and numbers paying each tax. Note that we are assuming that everybody pays their taxes and claims their benefits - we don't currently correct for non-takeup of benefits, tax avoidance, or lags in payment. We're showing a costs summary at the top of the popup, and a fuller table at the bottom.
-   note: Our estimates are for taxes raised and spending on benefits in Scotland, including taxes and benefits reserved to the UK Government. So it *isn't* the actual budget of the current Scotish Government, which includes only the devolved parts.
+   note: Our estimates are for taxes raised and spending on benefits in Scotland, including taxes and benefits reserved to the UK Government. So it *isn't* the actual budget of the current Scottish Government, which includes only the devolved parts.
 
 sfc:
    title: SFC Income Tax Corrections
@@ -71,8 +71,8 @@ income-tax:
 
 national-insurance:
     title: National Insurance
-    summary: National Insurance (NI) is a tax on earnings, both for workers and the self-employed. It is set by the UK Govenment, not the Scottish Government. Payments for NI qualify you for the State Pension and some other state benefits (but not the National Health Service, despite the name).
-    full: Different rates National Insurance apply to the self-employed and to waged workers. For workers, NI is charged is charged seperately on employees and employers. Here, for simplicity, you can change only the employee rates; the full model covers all forms of NI. Note that there are by default two zero-rate bands of NI; if you earn above the first one, but below band 3, you don't actually pay any NI but are counted as having paid some for qualifing for the state pension and other NI-related state benefits. Use the <i class="bi-plus-circle text-success"></i> and <i class="bi-dash-circle text-danger"></i> icons on the right to add and delete tax rates and bands.
+    summary: National Insurance (NI) is a tax on earnings, both for workers and the self-employed. It is set by the UK Government, not the Scottish Government. Payments for NI qualify you for the State Pension and some other state benefits (but not the National Health Service, despite the name).
+    full: Different rates National Insurance apply to the self-employed and to waged workers. For workers, NI is charged is charged separately on employees and employers. Here, for simplicity, you can change only the employee rates; the full model covers all forms of NI. Note that there are by default two zero-rate bands of NI; if you earn above the first one, but below band 3, you don't actually pay any NI but are counted as having paid some for qualifying for the state pension and other NI-related state benefits. Use the <i class="bi-plus-circle text-success"></i> and <i class="bi-dash-circle text-danger"></i> icons on the right to add and delete tax rates and bands.
 
 reserved-benefits:
     title: Reserved Benefits
