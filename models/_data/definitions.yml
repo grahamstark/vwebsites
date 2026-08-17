@@ -11,7 +11,7 @@ deciles:
 costs:
    title: Revenues, Caseloads and Costs
    summary: These are our estimates of the costs to the Government of your changes, in £s p.a.
-   full: These are our estimates of the annual costs and caseloads for each benefit we model, and revenues and numbers paying each tax. Note that these are modelled benefit entitlements and tax liabilities - we don't currently correct for non-takeup of benefits, tax avoidance, or lags in payment. We're showing a costs summary at the top of the popup, and a fuller table at the bottom.
+   full: These are our estimates of the annual costs and caseloads for each benefit we model, and revenues and numbers paying each tax. Note that we are assuming that everybody pays their taxes and claims their benefits - we don't currently correct for non-takeup of benefits, tax avoidance, or lags in payment. We're showing a costs summary at the top of the popup, and a fuller table at the bottom.
 
 sfc:
    title: SFC Income Tax Corrections
@@ -34,13 +34,13 @@ metrs:
 
 metrs_transitions:
     title: METRs Transitions
-    summary: This shows how the METRS of working-age people change as a result of your changes. The position before your changes is in the rows, and after your changes are in the columns. So the top row shows everyone with a METRs of over 100% before your changes, so they *lose* income as their earnings increase. Likewise the 2nd column gives the numbers with exactly 100% after your changes - so they gain nothing from the next £1 they earn. The red columns below the diagonal are counts of people whose METR has worsened. Likewise movements into the green areas above the diagonal show the numbers whose METR improves as a result of your changes.
+    summary: This shows how the METRS of working-age people change as a result of your reforms. The position before your changes is in the rows, and after your changes are in the columns. For instance, the top row shows everyone with a METRs of over 100% before your changes, so they *lose* income as their earnings increase. Likewise the 2nd column gives the numbers with exactly 100% after your changes - so they gain nothing from the next £1 they earn. The red columns below the diagonal are counts of people whose METR has worsened. Likewise movements into the green areas above the diagonal show the numbers whose METR improves as a result of your changes.
 
 poverty:
     title: Measures of Poverty
     summary: The headline poverty rate is the percentage of the Scottish population that live in households with income below 60% of the median. The Child Poverty rate is the percentage of children in such households.
     full: Poverty in this context is about how many people fall below some minimum standard. Since 1991 the official poverty line for the UK has been defined 60% of median equivalised household income. This is the [Households Below Average Income (HBAI) measure](){:target="_blank"}. The model reports headcounts (numbers below the poverty line) and also calculates several other measures; headcounts can be misleading since people below the poverty line all count for the same regardless of whether they are far below the poverty line, or only just below it. The Poverty Gap, Poverty Severity, Shorrocks and Sen measures all give extra weight to extremely poor people.
-    note: The changes you make can alter median incomes. That can make poverty changes hard to interpret, so here we always use median income from the base 'no change' system; this is *absolute* rather than *relative* poverty. See [The HBAI Handbook](http://research.dwp.gov.uk/asd/frs/){:target="_blank"} for more on the measure of income. See the [World Bank Handbook on poverty and inequality](http://documents.worldbank.org/curated/en/488081468157174849/Handbook-on-poverty-and-inequality){:target="_blank"} for details of the various poverty measures.
+    note: The changes you make can alter median incomes. That can make poverty changes hard to interpret, so here we always use median income from the base 'no change' system; this is *absolute* rather than *relative* poverty. See [The HBAI Handbook](http://research.dwp.gov.uk/asd/frs/){:target="_blank"} for more on the measure of income. See the [World Bank Handbook on poverty and inequality](http://documents.worldbank.org/curated/en/488081468157174849/Handbook-on-poverty-and-inequality){:target="_blank"} for details of the various poverty measures. Note that all these are *univariate* measures, just of poverty in incomes; *multivariate* measures are also sometimes used - deprivation in food, shelter, and so on. Some measures of that sort might be added to the model in future.
 
 poverty_transitions:
     title: Transitions in and out of Poverty
@@ -49,15 +49,43 @@ poverty_transitions:
 
 inequality:
     title: Measures of inequality
-    summary: Inequality
-    full:
+    summary: This section reports some standard measures of how unequal the distribution of income is. The two most widely reported measures are the Gini (see the Lorenz curve above) and Palma indexm, which is the share of the richest 10% of the population divided by the share of the poorest 40%.
+    full: There is a large literature on measuring inequality - see, for instance, the [World Bank Handbook](https://documents.worldbank.org/en/publication/documents-reports/documentdetail/488081468157174849/Handbook-on-poverty-and-inequality){:target="_blank"}  and [Cowell](https://doi.org/10.1093/acprof:osobl/9780199594030.001.0001){:target="_blank"}. Many possible measures with desirable properties have been proposed. Here, we also report three values for the Atkinson index - the 'ϵ' here is an 'inequality aversion factor' - the higher it is, the more society disapproves of inequality, and the Hoover index, which is It is the percentage of total income that would have to be redistributed to make all incomes equal.
 
 lorenz:
+    title: The Lorenz Curve
+    summary:  This is the *lorenz curve*, a simple but powerful tool we have for thinking systematically about inequality, showing the distribution of income and how your changes affect it. On the x-axis is the cumulative population share - 1/10th, 1/5th and so on, and the cumulative income share is on the y-axis.
+    full: If everybody had the same share, the Lorenz curve would be the diagonal line, since the first 10% of the population would have 10% of the income, 50% would have 50% and so on. So the more equal a country is, the closer the lorenz curve will be to the diagonal, and, conversely, the more unequal it is, the more the curve will be bowed away from the diagonal.  The bigger the area between the diagonal and the the greater the inequality. The Gini Coefficient below just expresses this ratio as a percentage - complete inequality gives a Gini of 100, and complete equality gives 0.
+
+income:
+    title: Incomes
+    summary: the results here mostly use *before housing costs equivalised income* - the exceptions are the aggregate costings, which use unequivalised money amounts. 'Equivalisation' means adjusting household incomes for family sizes, since a large family costs more to feed and house than a small one. See [the Government Households Below Average Income (HBAI) technical report](https://www.gov.uk/government/statistics/households-below-average-income-for-financial-years-ending-1995-to-2025/households-below-average-income-background-information-and-methodology-report-fye-2025) for more more on the income defintions used. The [annual HBAI reports have a very nice chart showing the distribution of HBAI incomes]() and we here we reproduce a slighty tweaked version of that chart.
+    full:   Income in £per week is on X-axis, in £10 bands, and an estimate of the numbers of people in each band on the y-axis. The chart is a little misleading in that it stops at £1,000pw. In reality, there are people with incomes higher than that - literally off-the-scale - so the full graph stretches far to the right. It's likely that the chart is truncated at £1,000 because very high incomes are hard to measure; I'll return to this point later,
+    note: Future versions of the model could allow you to switch between different measures of income, for example before- and after- housing costs, and with different (or no) measures of equivalisation.
+
+income-tax:
     title:
     summary:
     full:
 
-income:
+national-insurance:
     title:
     summary:
     full:
+
+scottish-benefits:
+    title:
+    summary:
+    full:
+
+reserved-benefits:
+    title:
+    summary:
+    full:
+
+about-scotben:
+    title:
+    summary:
+    full:
+
+
