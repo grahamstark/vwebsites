@@ -59,7 +59,7 @@ Lorenz:
 
 income:
     title: Incomes
-    summary: the results here mostly use *before housing costs equivalised income* - the exceptions are the aggregate costings, which use unequivalised money amounts. 'Equivalisation' means adjusting household incomes for family sizes, since a large family costs more to feed and house than a small one. See [the Government Households Below Average Income (HBAI) technical report](https://www.gov.uk/government/statistics/households-below-average-income-for-financial-years-ending-1995-to-2025/households-below-average-income-background-information-and-methodology-report-fye-2025) for more more on the income definitions used. The [annual HBAI reports have a very nice chart showing the distribution of HBAI incomes]() and we here we reproduce a slightly tweaked version of that chart.
+    summary: the results here mostly use *before housing costs equivalised income* - the exceptions are the aggregate costings, which use unequivalised money amounts. 'Equivalisation' means adjusting household incomes for family sizes, since a large family costs more to feed and house than a small one. See [the Government Households Below Average Income (HBAI) technical report](https://www.gov.uk/government/statistics/households-below-average-income-for-financial-years-ending-1995-to-2025/households-below-average-income-background-information-and-methodology-report-fye-2025){:target="_blank"} for more more on the income definitions used. The [annual HBAI reports have a very nice chart showing the distribution of HBAI incomes](){:target="_blank"} and we here we reproduce a slightly tweaked version of that chart.
     full:   Income in £per week is on X-axis, in £10 bands, and an estimate of the numbers of people in each band on the y-axis. The chart is a little misleading in that it stops at £1,000pw. In reality, there are people with incomes higher than that - literally off-the-scale - so the full graph stretches far to the right. It's likely that the chart is truncated at £1,000 because very high incomes are hard to measure; I'll return to this point later,
     note: Future versions of the model could allow you to switch between different measures of income, for example before- and after- housing costs, and with different (or no) measures of Equivalisation.
 
@@ -73,15 +73,15 @@ national-insurance:
     summary: National Insurance (NI) is a tax on earnings, both for workers and the self-employed. It is set by the UK Govenment, not the Scottish Government. Payments for NI qualify you for the State Pension and some other state benefits (but not the National Health Service, despite the name).
     full: Different rates National Insurance apply to the self-employed and to waged workers. For workers, NI is charged is charged seperately on employees and employers. Here, for simplicity, you can change only the employee rates; the full model covers all forms of NI. Note that there are by default two zero-rate bands of NI; if you earn above the first one, but below band 3, you don't actually pay any NI but are counted as having paid some for qualifing for the state pension and other NI-related state benefits. Use the <i class="bi-plus-circle text-success"></i> and <i class="bi-dash-circle text-danger"></i> icons on the right to add and delete tax rates and bands.
 
-scottish-benefits:
-    title: Scottish Benefits
-    summary: Scottish Benefits summary
-    full: Scottish Benefits full
-
 reserved-benefits:
     title: Reserved Benefits
     summary: Reserved Benefits summary
     full: Reserved Benefits full
+
+scottish-benefits:
+    title: Scottish Benefits
+    summary: The [Scottish Benefits](https://www.socialsecurity.gov.scot/){:target="_blank"} include most benefits for the disabled - Adult Disability Payment, Child Disability Payment and Pension Age Disability Payment, Discretionary Housing Payments, The Scottish Child Payment (SCP), and a variety of one-off and in-kind payments. The most distinctive of these is SCP, which is a supplement for families with children who are receiving a means-tested benefit (chiefly Universal Credit). SCP is what's modelled here. SCP is a key part of Scotland's [Child Poverty Strategy](https://www.gov.scot/publications/bringing-hope-building-futures-tackling-child-poverty-delivery-plan-2026-2031/){:target="_blank"}.
+
 
 about-scotben:
     title:
