@@ -76,8 +76,8 @@ national-insurance:
 
 reserved-benefits:
     title: Reserved Benefits
-    summary: £22bn of the £28bn spent on benefits in Scotland Reserved Benefits
-    full: Reserved Benefits full
+    summary: Most of the spending on benefits in Scotland (£22bn of £28bn) is controlled by the UK goverment. The most important of these reserved benefits are Universal Credit (UC), paid to working-age families on low incomes, Child Benefit, paid to all families with children except those with very high earnings, and the State Pension. [Over 100 other state benefits exist](){:target="_blank"}; the full ScotBen can model most of them.
+    full: There are two UC parameters here: the xxx for single people aged over 25 and the taper. In reality UC has
 
 scottish-benefits:
     title: Scottish Benefits
