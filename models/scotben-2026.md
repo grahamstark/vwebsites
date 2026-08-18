@@ -1,6 +1,6 @@
 ---
 title: Scotben Mini 2026
-author: graham_s
+author: Graham Stark <graham.stark@virtual-worlds.scot>
 layout: scotben-2026
 permalink: /scotben-2026/
 order: 1
