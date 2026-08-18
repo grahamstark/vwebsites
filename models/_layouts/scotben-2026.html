@@ -53,7 +53,15 @@
     {% include default-output.html which='income' %}
 
     </div>
+
+    <div class='row'>
+        <div class='col'>&nbsp;</div>
+        <div class="col alert alert-success border rounded-2 m-1 p-2" role="alert"><a id='phunpack' class='link-success' href=''>Download a Zipfile with full results.</a></div>
+        <div class='col'>&nbsp;</div>
+    </div>
+
 </div><!-- output-wrapper -->
+
 
 {% include modal-popups.html which='gainlose' %}
 {% include modal-popups.html which='costs' %}
@@ -61,8 +69,6 @@
 {% include modal-popups.html which='poverty' %}
 {% include modal-popups.html which='inequality' %}
 {% include modal-popups.html which='income' %}
-
-<p><a id='phunpack' href=''>Download a Zipfile with full results.</a></p>
 
 {{ page.content | markdownify }}
 
