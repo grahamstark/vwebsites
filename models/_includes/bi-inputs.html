@@ -26,6 +26,23 @@
                         <input id='taxallowance' type='number' name="taxallowance" min='0' max='100000' value='' step='1'  class='form-control w-50'/>
                     </div>
             </fieldset>
+            <fieldset class='col border rounded-2 m-1 p-2 ukreserved'>
+                {% include help-popup.html id='national-insurance' data=site.data.definitions.national-insurance %}
+                <input type="hidden" id="ni-n" name="ni-n" value=""/>
+                <table class="table table-sm table-striped">
+                    <caption>Rates in %, bands in &pound;s pw</caption>
+                    <thead>
+                        <tr>
+                            <th>Rate (%)</th>
+                            <th>Band (£pw)</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id='ni-rows'>
+                    </tbody>
+                </table>
+            </fieldset>
             <fieldset class="col border rounded-2 m-1 p-2">
                     <h4>Basic Income</h4>
                     <div class="row">
