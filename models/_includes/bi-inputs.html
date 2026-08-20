@@ -47,34 +47,47 @@
                     <h4>Basic Income</h4>
                     <div class="row">
                         <div class='col'>
-                            <label for='bi-adult' class='form-label'>Adult £pa</label>
-                            <input id='bi-adult' type='number'  min='0' max='30000' step='1' class='form-control  w-50' value='4800'/>
+                            <label for='adult_amount' class='form-label'>Adult £pa</label>
+                            <input id='adult_amount' type='number'  min='0' max='30000' step='1' class='form-control  w-50' value='4800'/>
                         </div>
                     </div>
                     <div class="row">
                         <div class='col'>
-                            <label for='bi-pensioner' class='form-label'>Universal Pension £pa</label>
-                            <input id='bi-pensioner' type='number'  min='0' max='30000' step='1' class='form-control w-50' value='8780'/>
+                            <label for='universal_pension ' class='form-label'>Universal Pension £pa</label>
+                            <input id='universal_pension ' type='number'  min='0' max='30000' step='1' class='form-control w-50' value='8780'/>
                         </div>
                     </div>
                     <div class="row">
                         <div class='col'>
-                            <label for='bi-pens-age' class='form-label'>Pension Age</label>
-                            <input id='bi-pens-age' type='number'  min='60' max='100' step='1' class='form-control w-50' value='66'/>
+                            <label for='retirement_age' class='form-label'>Pension Age</label>
+                            <input id='retirement_age' type='number'  min='60' max='100' step='1' class='form-control w-50' value='66'/>
                         </div>
                     </div>
                     <div class="row">
                         <div class='col'>
-                            <label for='bi-child' class='form-label'>Child £pa</label>
-                            <input id='bi-child' type='number'  min='0' max='30000' step='1' class='form-control w-50' value='3000'/>
+                            <label for='child_amount' class='form-label'>Child £pa</label>
+                            <input id='child_amount' type='number'  min='0' max='30000' step='1' class='form-control w-50' value='3000'/>
                         </div>
                     </div>
                     <div class="row">
                         <div class='col'>
-                            <label for='bi-adult-age' class='form-label'>Age of Adulthood</label>
-                            <input id='bi-adult-age' type='number'  min='12' max='100' step='1' class='form-control w-50' value='17'/>
+                            <label for='adult-age' class='form-label'>Age of Adulthood</label>
+                            <input id='adult-age' type='number'  min='12' max='100' step='1' class='form-control w-50' value='17'/>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class='col'>
+                            <input class="form-check-input" type="checkbox" id="ubi-taxable" />
+                            <label for='ubi-taxable' class='form-check-label'>Make The UBI Taxable?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='col'>
+                            <input class="form-check-input" type="checkbox" id="ubi_as_mt_income" />
+                            <label for='ubi_as_mt_income' class='form-check-label'>Treat The UBI As Income for Means-Tested Benefits?</label>
+                        </div>
+                    </div>
+
             </fieldset>
             <fieldset class="col border rounded-2 m-1 p-2">
                 <h4>Treatment of Other Benefits</h4>
@@ -83,15 +96,15 @@
                         <p>What do with means-tested benefits?</p>
                         <div class='form-check'>
                             <label for='ubi-mtbens-keep-as-is' class='form-check-label'>Keep As-Is</label>
-                            <input class="form-check-input"  type='radio'  aria-label="Default select example"  name='ubi-mtbens' id='ubi-mtbens-keep-as-is'/>
+                            <input class="form-check-input"  type='radio'  aria-label="Default select example"  name='mt_bens_treatment' id='ubi-mtbens-keep-as-is'/>
                         </div>
                         <div class='form-check'>
                             <label for='ubi-mtbens-abolish' class='form-check-label'>Abolish Completely</label>
-                            <input class="form-check-input"  type='radio'  aria-label="Default select example"  name='ubi-mtbens' id='ubi-mtbens-abolish' checked='checked'/>
+                            <input class="form-check-input"  type='radio'  aria-label="Default select example"  name='mt_bens_treatment' id='ubi-mtbens-abolish' checked='checked'/>
                         </div>
                         <div class='form-check'>
                             <label for='ubi-mtbens-keep-housing' class='form-check-label'>Keep Housing Support</label>
-                            <input class="form-check-input"  type='radio'  aria-label="Default select example"  name='ubi-mtbens' id='ubi-mtbens-keep-housing' />
+                            <input class="form-check-input"  type='radio'  aria-label="Default select example"  name='mt_bens_treatment' id='ubi-mtbens-keep-housing' />
                         </div>
                     </div>
                 </div>
@@ -102,26 +115,32 @@
                 </div>
                 <div class="row">
                     <div class='col'>
-                        <input class="form-check-input" type="checkbox" id="ubi-abolish-sick"/>
-                        <label for='ubi-abolish-sick' class='form-check-label'>Abolish Sickness/Disability Benefits</label>
+                        <input class="form-check-input" type="checkbox" id="abolish_sickness_bens"/>
+                        <label for='abolish_sickness_bens' class='form-check-label'>Abolish Sickness/Disability Benefits</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class='col'>
-                        <input class="form-check-input" type="checkbox" id="ubi-abolish-pensions" checked='checked'/>
-                        <label for='ubi-abolish-pensions' class='form-check-label'>Abolish State Pensions</label>
+                        <input class="form-check-input" type="checkbox" id="abolish_pensions" checked='checked'/>
+                        <label for='abolish_pensions' class='form-check-label'>Abolish State Pensions</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class='col'>
-                        <input class="form-check-input" type="checkbox" id="ubi-abolish-esa" checked='checked'/>
-                        <label for='ubi-abolish-esa' class='form-check-label'>Abolish JSA and ESA</label>
+                        <input class="form-check-input" type="checkbox" id="abolish_housing"/>
+                        <label for='abolish_housing' class='form-check-label'>Abolish All Housing Support</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class='col'>
-                        <input class="form-check-input" type="checkbox" id="ubi-abolish-others" checked='checked'/>
-                        <label for='ubi-abolish-others' class='form-check-label'>Abolish Other Benefits</label>
+                        <input class="form-check-input" type="checkbox" id="abolish_jsa_esa:" checked='checked'/>
+                        <label for='abolish_jsa_esa:' class='form-check-label'>Abolish Contributory ESA/JSA</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col'>
+                        <input class="form-check-input" type="checkbox" id="abolish_others"/>
+                        <label for='abolish_others' class='form-check-label'>Abolish All Other Benefits</label>
                     </div>
                 </div>
             </fieldset>
