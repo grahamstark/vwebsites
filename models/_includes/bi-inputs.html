@@ -44,7 +44,7 @@
                 </table>
             </fieldset>
             <fieldset class="col border rounded-2 m-1 p-2">
-                    <h4>Basic Income</h4>
+                    <legend>Basic Income - Amounts</legend>
                     <div class="row">
                         <div class='col'>
                             <label for='adult_amount' class='form-label'>Adult £pa</label>
@@ -77,13 +77,10 @@
                     </div>
 
             </fieldset>
-            <fieldset class="col border rounded-2 m-1 p-2">
-                <h4>Treatment of Other Benefits</h4>
-                <div class="row">
-                    <div class='col'>
-                        <p>What do with means-tested benefits?</p>
-
-                        <div class="form-check">
+            <div class='col'>
+                <fieldset class="row border rounded-2 m-1 p-2">
+                    <legend>What to do with means-tested benefits?</legend>
+                    <div class="form-check">
                         <input class="form-check-input"
                             type="radio"
                             name="mt_bens_treatment"
@@ -95,8 +92,8 @@
                             for="ub_as_is">
                             Keep as is
                         </label>
-                        </div>
-                        <div class="form-check">
+                    </div>
+                    <div class="form-check">
                         <input class="form-check-input"
                             type="radio"
                             name="mt_bens_treatment"
@@ -107,8 +104,8 @@
                             for="ub_abolish">
                             Abolish completely
                         </label>
-                        </div>
-                        <div class="form-check">
+                    </div>
+                    <div class="form-check">
                         <input class="form-check-input"
                             type="radio"
                             name="mt_bens_treatment"
@@ -119,57 +116,49 @@
                             for="ub_keep_housing">
                             Keep Support for Housing Costs only
                         </label>
-                        </div>
-
+                    </div>
+                </fieldset>
+                <fieldset class="row border rounded-2 m-1 p-2">
+                    <legend>UBI as income</legend>
                     <div class="row">
                         <div class='col'>
                             <input class="form-check-input" type="checkbox" id="ubi_taxable" />
-                            <label for='ubi_taxable' class='form-check-label'>Make The UBI Taxable?</label>
+                            <label for='ubi_taxable' class='form-check-label'>Make the UBI taxable?</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class='col'>
                             <input class="form-check-input" type="checkbox" id="ubi_as_mt_income" />
-                            <label for='ubi_as_mt_income' class='form-check-label'>Treat The UBI As Income for Means-Tested Benefits?</label>
+                            <label for='ubi_as_mt_income' class='form-check-label'>Treat as income for means-tested benefits?</label>
                         </div>
                     </div>
-                </div>
-            </fieldset>
-            <fieldset class="col border rounded-2 m-1 p-2">
-
-
-            </fieldset>
-
-                <div class="row p-2">
-                    <div class='col'>
-                    <h5>How to treat non-means-tested Benefits?</h5>
+                </fieldset>
+                <fieldset class="row border rounded-2 m-1 p-2">
+                    <legend>How to treat non-means-tested Benefits?</legend>
+                    <div class="row">
+                        <div class='col'>
+                            <input class="form-check-input" type="checkbox" id="abolish_sickness_bens"/>
+                            <label for='abolish_sickness_bens' class='form-check-label'>Abolish Sickness/Disability Benefits</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class='col'>
-                        <input class="form-check-input" type="checkbox" id="abolish_sickness_bens"/>
-                        <label for='abolish_sickness_bens' class='form-check-label'>Abolish Sickness/Disability Benefits</label>
+                    <div class="row">
+                        <div class='col'>
+                            <input class="form-check-input" type="checkbox" id="abolish_pensions" checked='checked'/>
+                            <label for='abolish_pensions' class='form-check-label'>Abolish State Pensions</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class='col'>
-                        <input class="form-check-input" type="checkbox" id="abolish_pensions" checked='checked'/>
-                        <label for='abolish_pensions' class='form-check-label'>Abolish State Pensions</label>
+                    <div class="row">
+                        <div class='col'>
+                            <input class="form-check-input" type="checkbox" id="abolish_jsa_esa:" checked='checked'/>
+                            <label for='abolish_jsa_esa:' class='form-check-label'>Abolish Contributory ESA/JSA</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class='col'>
-                        <input class="form-check-input" type="checkbox" id="abolish_jsa_esa:" checked='checked'/>
-                        <label for='abolish_jsa_esa:' class='form-check-label'>Abolish Contributory ESA/JSA</label>
+                    <div class="row">
+                        <div class='col'>
+                            <input class="form-check-input" type="checkbox" id="abolish_others"/>
+                            <label for='abolish_others' class='form-check-label'>Abolish All Other Benefits</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class='col'>
-                        <input class="form-check-input" type="checkbox" id="abolish_others"/>
-                        <label for='abolish_others' class='form-check-label'>Abolish All Other Benefits</label>
-                    </div>
-                </div>
-            </fieldset>
-        </div> <!-- single row -->
+                </fieldset>
     </div><!-- container-fluid -->
 </form>
