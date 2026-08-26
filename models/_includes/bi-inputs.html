@@ -71,20 +71,8 @@
                     </div>
                     <div class="row">
                         <div class='col'>
-                            <label for='adult-age' class='form-label'>Age of Adulthood</label>
-                            <input id='adult-age' type='number'  min='12' max='100' step='1' class='form-control w-50' value='17'/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class='col'>
-                            <input class="form-check-input" type="checkbox" id="ubi-taxable" />
-                            <label for='ubi-taxable' class='form-check-label'>Make The UBI Taxable?</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class='col'>
-                            <input class="form-check-input" type="checkbox" id="ubi_as_mt_income" />
-                            <label for='ubi_as_mt_income' class='form-check-label'>Treat The UBI As Income for Means-Tested Benefits?</label>
+                            <label for='adult_age' class='form-label'>Age of Adulthood</label>
+                            <input id='adult_age' type='number'  min='12' max='100' step='1' class='form-control w-50' value='17'/>
                         </div>
                     </div>
 
@@ -94,20 +82,64 @@
                 <div class="row">
                     <div class='col'>
                         <p>What do with means-tested benefits?</p>
-                        <div class='form-check'>
-                            <label for='ubi-mtbens-keep-as-is' class='form-check-label'>Keep As-Is</label>
-                            <input class="form-check-input"  type='radio'  aria-label="Default select example"  name='mt_bens_treatment' id='ubi-mtbens-keep-as-is'/>
+
+                        <div class="form-check">
+                        <input class="form-check-input"
+                            type="radio"
+                            name="mt_bens_treatment"
+                            id="ub_as_is"
+                            value="ub_as_is"
+                            checked='checked'>
+                        <label
+                            class="form-check-label"
+                            for="ub_as_is">
+                            Keep as is
+                        </label>
                         </div>
-                        <div class='form-check'>
-                            <label for='ubi-mtbens-abolish' class='form-check-label'>Abolish Completely</label>
-                            <input class="form-check-input"  type='radio'  aria-label="Default select example"  name='mt_bens_treatment' id='ubi-mtbens-abolish' checked='checked'/>
+                        <div class="form-check">
+                        <input class="form-check-input"
+                            type="radio"
+                            name="mt_bens_treatment"
+                            id="ub_abolish"
+                            value="ub_abolish">
+                        <label
+                            class="form-check-label"
+                            for="ub_abolish">
+                            Abolish completely
+                        </label>
                         </div>
-                        <div class='form-check'>
-                            <label for='ubi-mtbens-keep-housing' class='form-check-label'>Keep Housing Support</label>
-                            <input class="form-check-input"  type='radio'  aria-label="Default select example"  name='mt_bens_treatment' id='ubi-mtbens-keep-housing' />
+                        <div class="form-check">
+                        <input class="form-check-input"
+                            type="radio"
+                            name="mt_bens_treatment"
+                            id="ub_keep_housing"
+                            value="ub_keep_housing">
+                        <label
+                            class="form-check-label"
+                            for="ub_keep_housing">
+                            Keep Support for Housing Costs only
+                        </label>
+                        </div>
+
+                    <div class="row">
+                        <div class='col'>
+                            <input class="form-check-input" type="checkbox" id="ubi_taxable" />
+                            <label for='ubi_taxable' class='form-check-label'>Make The UBI Taxable?</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class='col'>
+                            <input class="form-check-input" type="checkbox" id="ubi_as_mt_income" />
+                            <label for='ubi_as_mt_income' class='form-check-label'>Treat The UBI As Income for Means-Tested Benefits?</label>
                         </div>
                     </div>
                 </div>
+            </fieldset>
+            <fieldset class="col border rounded-2 m-1 p-2">
+
+
+            </fieldset>
+
                 <div class="row p-2">
                     <div class='col'>
                     <h5>How to treat non-means-tested Benefits?</h5>
@@ -123,12 +155,6 @@
                     <div class='col'>
                         <input class="form-check-input" type="checkbox" id="abolish_pensions" checked='checked'/>
                         <label for='abolish_pensions' class='form-check-label'>Abolish State Pensions</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class='col'>
-                        <input class="form-check-input" type="checkbox" id="abolish_housing"/>
-                        <label for='abolish_housing' class='form-check-label'>Abolish All Housing Support</label>
                     </div>
                 </div>
                 <div class="row">
