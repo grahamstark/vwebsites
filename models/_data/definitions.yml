@@ -89,4 +89,19 @@ about-scotben:
     summary:
     full:
 
+bi-income:
+    title: UBI as income
+    summary: UBI as income
+
+bi-mts:
+    title: What to do with means-tested benefits?
+    summary: What to do with means-tested benefits?
+
+bi-amounts:
+    title: UBI - Amounts
+    summary: UBI - Amounts
+
+bi-other-bens:
+    title: UBI - Treatment of Other Benefits
+    summary: UBI - toob
 
