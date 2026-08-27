@@ -28,6 +28,7 @@ async function resetParams(){
 
 async function sendParams( uid, url ){
     const formData = scrapeData();
+    console.log( "sendParams; scraped form data as %o", formData );
     const response = await fetch( url, {
         method: "POST",
         // Set the FormData instance as the request body

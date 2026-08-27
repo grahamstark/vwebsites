@@ -59,6 +59,27 @@ function setVal( id, val, def ){
     }
 }
 
+
+function setCheck( id, val, def ){
+    $( "#"+id ).prop('checked', val );
+    console.log( "setCheck for #%s val=%s def=%s", id, val, def );
+    if( val != def ){
+        $( "."+id ).addClass( 'changed');
+    } else {
+        $( "."+id ).removeClass( 'changed');
+    }
+}
+
+function setRadio( id, val, def ){
+    $('input[name="'+id+'"][value="'+val+'"]').prop('checked',true);
+    console.log( "setRadio for #%s val=%s def=%s", id, val, def );
+    if( val != def ){
+        $( "."+id ).addClass( 'changed');
+    } else {
+        $( "."+id ).removeClass( 'changed');
+    }
+}
+
 function getSomething( key ){
     var thing = localStorage.getItem( key );
     console.log( "got "+key+" from local storage as " + thing + "; datatype is " + typeof(thing));
