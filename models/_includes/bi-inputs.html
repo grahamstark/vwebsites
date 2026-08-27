@@ -5,44 +5,10 @@
     <!-- fixme gone a bit crazy with divs here - why nested fluid containers? -->
     <div class='container-fluid'>
         <div class='row'>
-            <fieldset class="col border rounded-2 m-1 p-2">
-                    {% include help-popup.html id='income-tax' data=site.data.definitions.income-tax %}
-                    <input type="hidden" id="tax-n" name="tax-n" value=""/>
-                    <table id='it-table' class="table table-sm table-striped">
-                        <caption>Rates in %, bands in &pound;s pa</caption>
-                        <thead>
-                            <tr>
-                                <th>Rate (%)</th>
-                                <th>Band (£pa)</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody id='tax-rows'>
-                        </tbody>
-                    </table>
-                    <div class="col ukreserved p-2 rounded-2">
-                        <label for='taxallowance' class='form-label'>Personal Allowance £pa</label>
-                        <input id='taxallowance' type='number' name="taxallowance" min='0' max='100000' value='' step='1'  class='form-control w-50'/>
-                    </div>
-            </fieldset>
-            <fieldset class='col border rounded-2 m-1 p-2 ukreserved'>
-                {% include help-popup.html id='national-insurance' data=site.data.definitions.national-insurance %}
-                <input type="hidden" id="ni-n" name="ni-n" value=""/>
-                <table class="table table-sm table-striped">
-                    <caption>Rates in %, bands in &pound;s pw</caption>
-                    <thead>
-                        <tr>
-                            <th>Rate (%)</th>
-                            <th>Band (£pw)</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id='ni-rows'>
-                    </tbody>
-                </table>
-            </fieldset>
+            <div class='col-2'><h3>Design your Basic Income here...</h3></div>
+            <div class='col-2'><h3>... And raise money to pay for it here...</h3></div>
+        </div>
+        <div class='row'>
             <fieldset class="col border rounded-2 m-1 p-2">
                 {% include help-popup.html id='bi-amounts' data=site.data.definitions.bi-amounts %}
                     <div class="row">
@@ -160,5 +126,44 @@
                         </div>
                     </div>
                 </fieldset>
+                <fieldset class="col border rounded-2 m-1 p-2">
+                    {% include help-popup.html id='income-tax' data=site.data.definitions.income-tax %}
+                    <input type="hidden" id="tax-n" name="tax-n" value=""/>
+                    <table id='it-table' class="table table-sm table-striped">
+                        <caption>Rates in %, bands in &pound;s pa</caption>
+                        <thead>
+                            <tr>
+                                <th>Rate (%)</th>
+                                <th>Band (£pa)</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id='tax-rows'>
+                        </tbody>
+                    </table>
+                    <div class="col ukreserved p-2 rounded-2">
+                        <label for='taxallowance' class='form-label'>Personal Allowance £pa</label>
+                        <input id='taxallowance' type='number' name="taxallowance" min='0' max='100000' value='' step='1'  class='form-control w-50'/>
+                    </div>
+            </fieldset>
+            <fieldset class='col border rounded-2 m-1 p-2 ukreserved'>
+                {% include help-popup.html id='national-insurance' data=site.data.definitions.national-insurance %}
+                <input type="hidden" id="ni-n" name="ni-n" value=""/>
+                <table class="table table-sm table-striped">
+                    <caption>Rates in %, bands in &pound;s pw</caption>
+                    <thead>
+                        <tr>
+                            <th>Rate (%)</th>
+                            <th>Band (£pw)</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id='ni-rows'>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div> <!-- row -->
     </div><!-- container-fluid -->
 </form>
