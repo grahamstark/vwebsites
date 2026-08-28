@@ -95,13 +95,13 @@ bi-income:
 
 bi-mts:
     title: What to do with means-tested benefits?
-    summary: As in Reed 2022, Scheme 2, the default here is to retain the means-tested benefit system (Universal Credit for working age families, pension credit for retired families) but count the UBI as income for those benefits. One difference from the scheme in Reed (20222) is that that includes a £10 UBI disregard for Universal Credit, so UC recipients gain at least that amoint = presently this is not an option in ScotBen.
+    summary: As in Reed 2022, Scheme 2, the default here is to retain the means-tested benefit system (Universal Credit for working age families, pension credit for retired families) but count the UBI as income for those benefits. One difference from the scheme in Reed (2022) is that it includes a £10 UBI disregard for Universal Credit (so UC recipients gain at least that amount from the introduction of a UBI); presently this is not an option in ScotBen.
 
 bi-amounts:
     title: UBI - Amounts
-    summary: These are the amounts (in £s p.a.) that would be paud to each child, working-age adult and retired person. The base values here are from Reed et. al. (2022) (Scheme 2, Table 1)
+    summary: These are the amounts (in £s p.a.) that would be paid to each child, working-age adult and retired person. The base values here are from Reed et. al. (2022) (Scheme 2, Table 1)
 
 bi-other-bens:
     title: UBI - Treatment of Other Benefits
-    summary: Note that as modelled, there is no increased UBI for the sick and disabled, so you may wish to retain existing disabled/sick benefits. The other settings here are taken from Schem 2 in Reed (2022)
+    summary: Note that as modelled, there is no increased UBI for the sick and disabled, so you may wish to retain existing disabled/sick benefits. The other settings here are taken from Scheme 2 in Reed (2022)
 
